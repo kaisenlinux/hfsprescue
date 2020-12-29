@@ -1,0 +1,13 @@
+Author: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+
+--- hfsprescue-3.5.orig/configure
++++ hfsprescue-3.5/configure
+@@ -568,7 +568,7 @@ ac_hostname=`(hostname || uname -n) 2>/d
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=/usr
+ ac_clean_files=
+ ac_config_libobj_dir=.
+ LIBOBJS=

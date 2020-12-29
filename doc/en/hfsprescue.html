@@ -1,0 +1,2139 @@
+<html>
+<head> 
+    <title>HFS+ Rescue - Hfsprescue    </title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/printlayout.css"> 		
+</head>
+
+<body>
+URL: <a href=https://www.plop.at/en/hfsprescue/full.html>https://www.plop.at/en/hfsprescue/full.html</a><br><a name=full></a>
+<h1>HFS+ Rescue - Hfsprescue</h1><hr><a name=index.html></a><br><h1>Table of Contents</h1><hr><a name=full></a>
+<table class=contentsNoBorders border=0 cellspacing=0 cellpadding=2><tr><td align=right>1.</td><td><a href=intro.html>Introduction</a></td></tr>
+<tr><td align=right>2.</td><td><a href=download.html>Download</a></td></tr>
+<tr><td align=right>3.</td><td><a href=recover_files.html>Recover your files</a></td></tr>
+<tr><td align=right>4.</td><td><a href=additional_features.html>Additional features</a></td></tr>
+<tr><td align=right>5.</td><td><a href=parameters.html>Command line parameters</a></td></tr>
+<tr><td align=right>6.</td><td><a href=list.html>List found files</a></td></tr>
+<tr><td align=right>7.</td><td><a href=csv.html>CSV export of file list</a></td></tr>
+<tr><td align=right>8.</td><td><a href=restore_one_file.html>Restore one file</a></td></tr>
+<tr><td align=right>9.</td><td><a href=restore_with_list.html>Restore files with a list</a></td></tr>
+<tr><td align=right>10.</td><td><a href=find_vh.html>Find the HFS+ Volume Header or Alternate Volume Header and the partition start offset</a></td></tr>
+<tr><td align=right>11.</td><td><a href=extract_vh.html>Extract the HFS+ Volume Header</a></td></tr>
+<tr><td align=right>12.</td><td><a href=find_eof.html>Find the Extents Overflow File</a></td></tr>
+<tr><td align=right>13.</td><td><a href=extract_eof.html>Extract the Extents Overflow File</a></td></tr>
+<tr><td align=right>14.</td><td><a href=remove_empty_dirs.html>Remove empty directories</a></td></tr>
+<tr><td align=right>15.</td><td><a href=find_bytes.html>Find bytes from a file and/or an Unicode string</a></td></tr>
+<tr><td align=right>16.</td><td><a href=files.html>Files &amp; Logs of hfsprescue</a></td></tr>
+<tr><td align=right>17.</td><td><a href=restored_directory.html>The 'restored' directory</a></td></tr>
+<tr><td align=right>18.</td><td><a href=faq.html>Problems / FAQ</a></td></tr>
+<tr><td align=right>19.</td><td><a href=invalid_files.html>Restored files are invalid/defect! Why?</a></td></tr>
+<tr><td align=right>20.</td><td><a href=partition_table_damaged.html>Partition table damaged, lost or not usable! How do I find the correct partition offset?</a></td></tr>
+<tr><td align=right>21.</td><td><a href=partition_offset.html>How do I find the correct partition offset with a reference file</a></td></tr>
+<tr><td align=right>22.</td><td><a href=unusual_block_size.html>Unusual block size</a></td></tr>
+<tr><td align=right>23.</td><td><a href=eof_problems.html>Extents Overflow File problems</a></td></tr>
+<tr><td align=right>24.</td><td><a href=permission_denied.html>Permission denied</a></td></tr>
+<tr><td align=right>25.</td><td><a href=sudo.html>sudo: hfsprescue: command not found</a></td></tr>
+<tr><td align=right>26.</td><td><a href=kernel_too_old.html>Precompiled - FATAL: kernel too old</a></td></tr>
+<tr><td align=right>27.</td><td><a href=unicode_utf8.html>File name accent troubles</a></td></tr>
+<tr><td align=right>28.</td><td><a href=asian.html>Asian file names</a></td></tr>
+<tr><td align=right>29.</td><td><a href=osx.html>Mac OS X notes</a></td></tr>
+<tr><td align=right>30.</td><td><a href=personal_notes.html>Personal notes</a></td></tr>
+</table><a name=intro.html></a><br><h1>1. Introduction</h1><hr><a name=full></a>
+
+<p>
+HFS+ (HFS Plus, Hierarchical File System Plus) is a file system, developed and used by Apple<sup>&reg;</sup>.
+</p>
+<p>
+hfsprescue is a program to recover files from a HFS+ formatted partition. 
+You can restore your files and directories even when it's not possible 
+to mount it with your operating system. As side effect, the program also restores deleted files.
+Your files and directories will be
+recovered to the directory '<span class=cmd>restored/</span>' in the directory where you start
+<span class=cmd>hfsprescue</span>. The damaged HFS+ file system will be opened as read only to not change the data on the damaged drive. So you need enough space to copy out the
+files from the HFS+ file system. 
+</p>
+<p>This program has no graphical user interface. You have to run it from the command line.</p>
+<p>hfsprescue runs under Linux, Mac OS X and FreeBSD.</p>
+<p>
+hfsprescue supports HFS+ compression (resource fork).
+</p>
+
+<p>Latest version: 3.5, 26/Apr/2020</p>
+<br>
+
+<a name=download.html></a><br><h1>2. Download</h1><hr><a name=full></a>
+<script type="text/javascript">
+<!--
+function mindonation(form,minprice)
+{
+  var price=form.amount.value;
+
+  price=price.trim();
+  price=price.replace(",",".");
+  if ((isNaN(parseFloat(price))) || (!isFinite(price)))
+  {
+    alert ( "Please enter a valid amount of at least " + minprice.toFixed(2));
+    form.amount.focus();
+    return(false);
+  }
+  if (price<minprice)
+  {
+    alert ( "Please enter a minimum donation of " + minprice.toFixed(2));
+    form.amount.focus();
+    return(false);
+  }
+  price=Number(price);
+  var currency=form.currency_code.value;
+  if ((currency=="JPY") || (currency=="HUF") || (currency=="TWD"))
+   form.amount.value=price.toFixed(0);
+  else  
+   form.amount.value=price.toFixed(2);
+  return(true);
+}
+//-->
+</script>
+
+    
+<p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr&lc=US" method="post"  onSubmit="return mindonation(this,5.00)">
+    <table border=0 cellspacing=8 cellpadding=8 class=paypalbox align=center>
+    <tr>
+	
+	<td>
+	    HFS+ Rescue recovered your data and you want to say thank you or support the development of this free software?<br>Just donate the amount you think, your data is worth to you :)	    
+	    <p>
+
+	    <input type="hidden" name="cmd" value="_donations">
+	    <input type="hidden" name="business" value="donate@plop.at">
+
+
+	    <input type="hidden" name="return" value="/print/en/hfsprescue/full.html">
+	    <input type="hidden" name="cancel_return" value="/print/en/hfsprescue/full.html">
+
+	    	    <input type="hidden" name="item_name" value="HFS+ Rescue">
+	    	    <input type="hidden" name="item_number" value="5">
+
+	    <table border=0 cellspacing=0 cellpadding=0>
+	    <tr>
+	    <td>
+
+	    Donate <input type="text" name="amount" value="" size=5>
+
+	    </td>	    
+	    <td>
+	    <select name="currency_code" style="margin: 5 5; padding: 4 4">
+	    <option value="EUR">EUR</option>
+	    <option value="USD">USD</option>
+	    </select>
+	    </td>
+	    
+	    <td>
+	    &nbsp; <input type="submit" name="submit" alt="PayPal" value="Donate with PayPal">
+	    or  <a href=/en/donate.html>Bitcoin</a>
+	    </td>
+	    </tr>
+	    </table>
+
+	    </p>
+
+
+
+
+	</td>
+    </tr>
+    </table>
+</form>
+
+</p>
+ 
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.5.tar.gz>hfsprescue-3.5.tar.gz</a> (2020/04/26) Source code<br>
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.5-precompiled.tar.gz>hfsprescue-3.5-precompiled.tar.gz</a> Precompiled for Linux, Mac OS X, FreeBSD<br>
+        
+        <br>
+        <br>
+<br>
+<p>Outdated, should not be used anymore.</p>
+
+         
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.4.tar.gz>hfsprescue-3.4.tar.gz</a> (2018/02/16) Source code<br>
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.4-precompiled.tar.gz>hfsprescue-3.4-precompiled.tar.gz</a> Precompiled for Linux, Mac OS X, FreeBSD<br>
+
+         
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.3.tar.gz>hfsprescue-3.3.tar.gz</a> (2017/03/31) Source code<br>
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.3-precompiled.tar.gz>hfsprescue-3.3-precompiled.tar.gz</a> Precompiled for Linux, Mac OS X, FreeBSD<br>
+
+	 
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.2.tar.gz>hfsprescue-3.2.tar.gz</a> (2016/11/29) Source code<br>
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.2-precompiled.tar.gz>hfsprescue-3.2-precompiled.tar.gz</a> Precompiled for Linux, Mac OS X, FreeBSD<br>
+	 
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.1.tar.gz>hfsprescue-3.1.tar.gz</a> (2016/09/14) Source code<br>
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.1-precompiled.tar.gz>hfsprescue-3.1-precompiled.tar.gz</a> Precompiled for Linux, Mac OS X, FreeBSD<br>
+	 
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.0.tar.gz>hfsprescue-3.0.tar.gz</a> (2016/07/26) Source code<br>
+        <a href=https://download.plop.at/hfsprescue/hfsprescue-3.0-precompiled.tar.gz>hfsprescue-3.0-precompiled.tar.gz</a> Precompiled for Linux, Mac OS X, FreeBSD<br>
+<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-2.2.tar.gz>hfsprescue-2.2.tar.gz</a> (2015/12/19) Source code<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-2.2-precompiled.tar.gz>hfsprescue-2.2-precompiled.tar.gz</a> (2015/12/19) Precompiled for Linux, Mac OS X, FreeBSD<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-2.1.tar.gz>hfsprescue-2.1.tar.gz</a> (2015/11/19) Source code<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-2.1-precompiled.tar.gz>hfsprescue-2.1-precompiled.tar.gz</a> (2015/11/19) Precompiled for Linux, Mac OS X, FreeBSD<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-2.0.tar.gz>hfsprescue-2.0.tar.gz</a> (2015/09/01) Source code<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-2.0-precompiled.zip>hfsprescue-2.0-precompiled.zip</a> (2015/09/01) Precompiled for Linux, Mac OS X, FreeBSD<br>
+<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-1.1.tar.gz>hfsprescue-1.1.tar.gz</a> (2015/02/02)<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-1.0.tar.gz>hfsprescue-1.0.tar.gz</a> (2015/01/12)<br>
+<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-0.3.tar.gz>hfsprescue-0.3.tar.gz</a> (2013/01/30)<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-0.2.tar.gz>hfsprescue-0.2.tar.gz</a> (2011/11/25)<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-0.1-patched.tar.gz>hfsprescue-0.1-patched.tar.gz</a> (2011/10/05)<br>
+<a href=https://download.plop.at/hfsprescue/hfsprescue-0.1.tar.gz>hfsprescue-0.1.tar.gz</a> (2010/11/30)
+</p>
+
+<br>
+
+
+
+
+<a name=recover_files.html></a><br><h1>3. Recover your files</h1><hr><a name=full></a>
+
+
+<p>You have to complete 6 steps to restore your files:</p>
+<ol>
+<li>
+    <p>
+    Scan for your files.<br>
+    <span class=cmd>hfsprescue -s1 &lt;device node|image file&gt; [-b &lt;block size&gt;] [-o &lt;offset in bytes&gt;] [-d &lt;working / destination directory&gt;] [-f|--force]</span>
+    </p>
+</li>
+<li>
+    <p>
+    Cleanup file database.<br>
+    <span class=cmd>hfsprescue -s2 [--utf8len &lt;value 1 to 5&gt;] [--future-days &lt;days&gt;] [-d &lt;working directory&gt;]</span>
+    </p>
+</li>
+<li>
+    <p>
+    Restore your files.<br>
+    <span class=cmd>hfsprescue -s3 &lt;device node|image file&gt; [-b &lt;block size&gt;] [-o &lt;offset in bytes&gt;] [-d &lt;working directory&gt;] [--vh-file &lt;file name&gt;] [--eof-file &lt;file name&gt;] [-c &lt;file number&gt;] [--alternative]</span>
+    </p>
+</li>
+<li>
+    <p>
+    Restore your directory structure.<br>
+    <span class=cmd>hfsprescue -s4 [-d &lt;working directory&gt;]</span>
+    </p>
+</li>
+<li>
+    <p>
+    Move the restored files to the correct directories.<br>
+    <span class=cmd>hfsprescue -s5 [-d &lt;working directory&gt;] </span>
+    </p>
+</li>
+<li>
+    <p>
+    Last step, finalize and cleanup.<br>
+    <span class=cmd>hfsprescue -s6 [-d &lt;working directory&gt;] [-k] </span>
+    </p>
+</li>
+</ol>
+<p>
+hfsprescue will guide you through every step and is telling you the command for the next step.
+</p>
+<br>
+
+
+<p>A simple example for the 6 steps:</p>
+<p>
+<blockquote><span class=cmd>
+hfsprescue -s1 /dev/sdb2<br>
+hfsprescue -s2<br>
+hfsprescue -s3 /dev/sdb2<br>
+hfsprescue -s4<br>
+hfsprescue -s5<br>
+hfsprescue -s6<br>
+</blockquote></p>
+
+
+<br>
+
+
+
+
+<a name=additional_features.html></a><br><h1>4. Additional features</h1><hr><a name=full></a>
+
+<p>hfsprescue has some additional features to help you 
+<blockquote>
+    &bull; Search Unicode string (useful on damaged/lost partition table).<br>
+    &bull; Search bytes from a file (useful on damaged/lost partition table).<br>
+    &bull; List files that have been found.<br>
+    &bull; CSV export of the list of files that have been found.<br>
+    &bull; Recover one file instead of all files.<br>
+    &bull; Recover files from a list.<br>
+    &bull; Find possible positions of the Extents Overflow File.<br>
+    &bull; Extract the Extents Overflow File.<br>
+    &bull; Find HFS+ Volume Header and partition start.<br>
+    &bull; Find HFS+ Alternate Volume Header.<br>
+    &bull; Extract a HFS+ Volume Header.<br>
+    &bull; Remove empty directories.<br>
+</blockquote>
+</p>
+
+<br>
+
+
+
+
+<a name=parameters.html></a><br><h1>5. Command line parameters</h1><hr><a name=full></a>
+
+<p class=cmd>
+    hfsprescue [-h|--help] [--version]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue -s1 &lt;device node|image file&gt; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-b &lt;block size&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-o &lt;offset in bytes&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-d &lt;working / destination directory&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-f|--force]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue -s2 [--utf8len &lt;value 1 to 5&gt;] [--future-days &lt;days&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue -s3 &lt;device node|image file&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-b &lt;block size&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-o &lt;offset in bytes&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-d &lt;working directory&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--vh-file &lt;file name&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--eof-file &lt;file name&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-c &lt;file number&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--file-list &lt;file name&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--file-list-csv &lt;file name&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--alternative]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--ignore-blocks]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--ignore-file-error]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue -s4 [-d &lt;working directory&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue -s5 [-d &lt;working directory&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue -s6 [-d &lt;working directory&gt;] [-k]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --find &lt;device node|image file&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ff &lt;num bytes&gt; &lt;file1&gt; [file2] [...]]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-fs &lt;string&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-o &lt;offset in bytes&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --list [--slash] [-d &lt;working directory&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --csv &lt;file name&gt;  [--slash] [-d &lt;working directory&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --one-file &lt;device node|image file&gt; &lt;file number&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-b &lt;block size&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-o &lt;offset in bytes&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-d &lt;working directory&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--vh-file &lt;file name&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--eof-file &lt;file name&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--alternative]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --find-eof<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-b &lt;block size&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-o &lt;offset in bytes&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--vh-file &lt;file name&gt;]
+</p>
+<br>
+<p class=cmd>
+hfsprescue --extract-eof &lt;device node|image file&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ [--start-block &lt;number&gt;] &lt; [--last-block &lt;number&gt;] | [--num-blocks &lt;number&gt;] &gt; ]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--eof-file &lt;output file&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--vh-file &lt;file name&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --find-vh<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-o &lt;offset in bytes&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--first]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-f|--force]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-v|--verbose]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --find-avh<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--first]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-f|--force]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-v|--verbose]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --extract-vh &lt;device node|image file&gt; &lt;LBA sector&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--vh-file &lt;output file&gt;]
+</p>
+<br>
+<p class=cmd>
+    hfsprescue --remove-empty-dirs<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--dir &lt;directory&gt;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-f|--force]
+</p>
+
+
+
+
+<br>
+<h1 id=hfsp_options>Parameter description</h1>
+<hr>
+
+
+<h3>Display help</h3>
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd> -h, --help</td><td>Display help and exit.</td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--version</td><td>Show program version.</td>
+</tr>
+</table>
+
+<br>
+
+<br><h3>Step 1 '-s1'</h3>
+<p>Scan for your files.</p>
+
+
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-s1 &lt;device node|image file&gt;</td>
+    <td>
+    Run step 1. You have to tell the device node or image file.
+    </td>
+</tr>
+ 
+ <tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-b &lt;block size&gt;</td>
+    <td>Set the block size in bytes. Useful when the Volume Header has been lost.</td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-f, --force</td>
+    <td>Overwrite current log files.</td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-o &lt;offset&gt;</td>
+    <td>Set the start offset of the partition in bytes. Useful when the partition table is 
+    lost or damaged. See <a href=#partition_table_damaged.html>here</a> for a description how to calculate the offset.
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-d &lt;working / destination directory&gt;</td>
+    <td>Use this directory instead of current directory.
+    </td>
+</tr>
+
+</table>
+<br>
+<br><h3>Step 2 '-s2'</h3> 
+<p>Cleanup file database.</p>
+
+    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-s2</td>
+    <td> Run step 2.
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--utf8len &lt;value 1 to 5&gt;</td>
+    <td>
+    Used for false file name detection. When you don't have file names with
+      asian chars, then you don't have to use this option. The default value 1.
+      Use 2 when you have asian file names.
+      The values 3 to 5 should not be used.
+
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--future-days &lt;days&gt;</td>
+    <td>Used for false file detection. Files with a creation date in the future
+      are ignored.
+      Default value is 7.
+    </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+
+</table>
+
+
+<br>
+<br><h3>Step 3 '-s3'</h3>
+<p>Restore your files.</p>
+    
+<table border=0 cellspacing=0 cellpadding=5>    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-s3 &lt;device node|image file&gt; </td>
+    <td> Run step 3. You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-b &lt;block size&gt;</td>
+    <td>Set the block size in bytes. Useful when the Volume Header has been lost.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-c &lt;file number&gt;</td>
+    <td>Continue the file restore and skip the files before
+    &lt;file number&gt;.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-o &lt;offset&gt;</td>
+    <td>Set the start offset of the partition in bytes. Useful when the partition table is 
+    lost or damaged. See <a href=#partition_table_damaged.html>here</a> for a description how to calculate the offset.
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--vh-file &lt;file name&gt;</td>
+    <td>Volume Header file. See also <a href=#extract_vh.html>here</a></td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--eof-file &lt;file name&gt;</td>
+    <td>Extents Overflow File. See also <a href=#extract_eof.html>here</a></td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--file-list &lt;file name&gt;</td>
+    <td>Restore files listed in file. See also <a href=#restore_with_list.html>here</a></td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--file-list-csv &lt;file name&gt;</td>
+    <td>Restore files listed in a CSV file. See also <a href=#restore_with_list.html>here</a></td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--alternative</td>
+    <td>Find a new name when the file already exists in it's directory. Can happen with older versions or deleted files.
+    See <a href=#hfsp_alternative>here</a> for details.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--ignore-blocks</td>
+    <td>Do not skip file restore when more blocks are allocated as needed. This is related for files bigger than 1 GB. 
+    Affected files are marked with '<span class=cmd>_too_many_blocks_skipped_</span>' in the log file of step 3.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>--ignore-file-error</td>
+    <td>Do not stop when there is a file creation error. 
+    Affected files are marked with '<span class=cmd>_file_create_error_</span>' in the log file of step 3.
+   </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Step 4 '-s4'</h3>
+<p>Restore your directory structure.</p>
+    
+<table border=0 cellspacing=0 cellpadding=5><tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-s4</td>
+    <td>Run step 4.
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Step 5 '-s5'</h3>
+<p>Move the restored files to the correct directories.</p>
+
+<table border=0 cellspacing=0 cellpadding=5><tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-s5</td>
+    <td>Run step 5.
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Step 6 '-s6'</h3>
+<p>Last step, finalize and cleanup.</p>
+
+<table border=0 cellspacing=0 cellpadding=5><tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-s6</td>
+    <td>Run step 6.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd>-k</td>
+    <td>Keep mkdir.sh and hfsprescue_dir_id.tmp files.
+   </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Find file bytes and/or an unicode string '--find'</h3>
+<p>Find data on sectors. See <a href=#find_bytes.html>here</a> for details.</p>
+    
+<table border=0 cellspacing=0 cellpadding=5><tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--find &lt;device node|image file&gt; </td>
+    <td>Find data. You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-ff &lt;num bytes&gt; &lt;file1&gt; [file2] [...]</td>
+    <td>Find number of bytes from given files.
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-fs &lt;string&gt;</td>
+    <td>Find a given string. The string will be converted to Unicode.
+   </td>
+</tr>
+    
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-o &lt;offset in bytes&gt;</td>
+    <td>Start search from offset.
+   </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>List files '--list'</h3>
+<p>List found files.
+    See <a href=#list.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--list</td>
+    <td>This parameter lists all files that have been found. You can run this after you completed Step 2.
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--slash</td>
+    <td>Mac  OS  X  allows  the  char  '/' in file names in the GUI. For
+              directory compatibility, '/' is converted to  ':'.  Use  --slash
+              when  you  want  to  display the '/' in the file name instead of
+              ':'. Maybe when you search a file name which has '/'.
+
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>CSV export of file list '--csv'</h3>
+<p>Export list to a CSV file.
+    See <a href=#csv.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--csv <file name></td>
+    <td>Export the file list to a CSV file.
+     You can run this after you completed Step 2.
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--slash</td>
+    <td> Mac  OS  X  allows  the  char  '/' in file names in the GUI. For
+              directory compatibility, '/' is converted to  ':'.  Use  --slash
+              when you want to export the '/' in the file name instead of ':'.
+
+   </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Restore one file '--one-file'</h3>
+<p>Restore just one file instead of all files that have been found.
+     You can run this after you completed Step 2.
+    See <a href=#restore_one_file.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--one-file<br>&nbsp;&nbsp;&lt;device node|image file&gt;<br>&nbsp;&nbsp;&lt;file number&gt; </td>
+    <td>You have to tell the device node or image file and the file number of the requested file. Both parameters are required.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-b &lt;block size&gt;</td>
+    <td>Set the block size in bytes. Useful when the Volume Header has been lost.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-o &lt;offset&gt;</td>
+    <td>Set the start offset of the partition in bytes. Useful when the partition table is 
+    lost or damaged. See <a href=#partition_table_damaged.html>here</a> for a description how to calculate the offset.
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-d &lt;working directory&gt;</td>
+    <td>Use working directory directory.
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--vh-file &lt;file name&gt;</td>
+    <td>Volume Header file. See also <a href=#extract_vh.html>here</a></td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--eof-file &lt;file name&gt;</td>
+    <td>Extents Overflow File. See also <a href=#extract_eof.html>here</a></td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--alternative</td>
+    <td>Find a new name when the file already exists in it's directory. Can happen with older versions or deleted files.
+    See <a href=#hfsp_alternative>here</a> for details.
+   </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Find the Extents Overflow File '--find-eof'</h3>
+<p>Scan the device for possible start blocks.
+    See <a href=#find_eof.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--find-eof &lt;device node|image file&gt;</td>
+    <td>You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-b &lt;block size&gt;</td>
+    <td>Set the block size in bytes. Useful when the Volume Header has been lost.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-o &lt;offset&gt;</td>
+    <td>Set the start offset of the partition in bytes. Useful when the partition table is 
+    lost or damaged. See <a href=#partition_table_damaged.html></a> for a description how to calculate the offset.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Extract the Extents Overflow File '--extract-eof'</h3>
+<p>See <a href=#extract_eof.html>here</a> for details.</p>
+    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--extract-eof &lt;device node|image file&gt;</td>
+    <td>You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--start-block &lt;number&gt;</td>
+    <td>Start block of the Extents Overflow File. Needs also '--last-block' or '--num-blocks'.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--last-block &lt;number&gt;</td>
+    <td>Last block of the Extents Overflow File. Needs also '--start-block'.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--num-blocks &lt;number&gt;</td>
+    <td>Number of blocks of the Extents Overflow File. Needs also '--start-block'.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--eof-file &lt;output file&gt;</td>
+    <td>Save file as file name.
+   </td>
+</tr>
+    
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--vh-file &lt;file name&gt;</td>
+    <td>Volume Header file name.
+   </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Find the HFS+ Volume Header '--find-vh'</h3>
+<p>Scan the device for possible Volume Headers and shows the start of the partition.
+    See <a href=#find_vh.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--find-vh &lt;device node|image file&gt;</td>
+    <td>You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-o &lt;offset in bytes&gt;</td>
+    <td>Start search from offset.
+   </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--first</td>
+    <td>Just show the first HFS+ Volume Header and quit.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-f, --force</td>
+    <td>Show Volume Header even when the lastMountVersion field reports another OS than Mac OS X or Linux.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-v, --verbose</td>
+    <td>Display detailed information.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Find the HFS+ Alternate Volume Header '--find-vh'</h3>
+<p>Scan the device for possible Alternate Volume Headers.
+    See <a href=#find_vh.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--find-avh &lt;device node|image file&gt;</td>
+    <td>You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--first</td>
+    <td>Just show the first HFS+ Volume Header and quit.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-f, --force</td>
+    <td>Show Volume Header even when the lastMountVersion field reports another OS than Mac OS X or Linux.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-v, --verbose</td>
+    <td>Display detailed information.
+    </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Extract the Volume Header'--extract-vh'</h3>
+<p>    See <a href=#extract_vh.html>here</a> for details.
+</p>    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--extract-vh &lt;device node|image file&gt;</td>
+    <td>You have to tell the device node or image file.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">LBA sector</td>
+    <td>Required input. LBA sector number of the Volume Header.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--vh-file &lt;output file&gt;</td>
+    <td>Save as file name.
+   </td>
+</tr>
+</table>
+
+
+<br>
+<br><h3>Remove empty directories '--remove-empty-dirs'</h3>
+<p>    See <a href=#remove_empty_dirs.html>here</a> for details.</p>
+    
+<table border=0 cellspacing=0 cellpadding=5>
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--remove-empty-dirs</td>
+    <td>Without additional parameters, the directory './restored' is used.
+   </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">--dir &lt;directory&gt;</td>
+    <td>Use the given directory to scan for and remove empty directories.
+   </td>
+</tr>
+    
+<tr>
+    <td>&nbsp;</td>
+    <td class=cmd style="white-space: nowrap;">-f, --force</td>
+    <td>Don't ask a question to start.
+   </td>
+</tr>
+
+</table>
+
+
+
+
+<br>
+
+
+<h1 id=hfsp_alternative>The '--alternative' parameter</h1>
+<hr>
+<p>During the restore process, it's possible that files have the same name in the same directory. This happens because of deleted files or older versions 
+of files. The default behavior is, that hfsprescue will keep only the latest version of the file, depending on the file date/time. But sometimes its needed
+to restore deleted and older versions of a file too. You can do this with the '<span class=cmd>--alternative</span>' parameter. 
+</p>
+<p>With this parameter, hfsprescue creates an alternative name, which is a combination of the
+original name and the Catalog ID of the file (+ if needed an additional number), when there is already a file in the directory.</p>
+<p>Note: Older versions of a file or deleted files may be corrupted.</p>
+
+
+
+
+
+<br>
+
+
+<a name=list.html></a><br><h1>6. List found files</h1><hr><a name=full></a>
+
+<p>You can display a list of files that have been found, after you completed Step 2 '-s2'.</p>
+<p>List fields: <span class=cmd>File Number: File Name, File Size, File RAW Time, File Date/Time, File Start Block</span></p>
+<blockquote>
+<p>Command: <span class=cmd>hfsprescue --list</span></p>
+<p>Sample output: 
+<pre class=contents>
+1: permStore, 66097 bytes, 1438688944, Tue Aug  4 13:49:04 2015, Start block 360458
+2: reverseDirectoryStore, 65536 bytes, 1438688940, Tue Aug  4 13:49:00 2015, Start block 48344
+3: reverseDirectoryStore.shadow, 3136 bytes, 1435230435, Thu Jun 25 13:07:15 2015, Start block 48375
+4: reverseStore.updates, 1 bytes, 1438688946, Tue Aug  4 13:49:06 2015, Start block 557113
+5: shutdown_time, 4 bytes, 1438067146, Tue Jul 28 09:05:46 2015, Start block 393216
+6: store.db, 118784 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 48294
+7: store.updates, 3 bytes, 1438688946, Tue Aug  4 13:49:06 2015, Start block 557112
+8: store_generation, 4 bytes, 1435230434, Thu Jun 25 13:07:14 2015, Start block 48361
+9: tmp.Cab, 0 bytes, 1435230434, Thu Jun 25 13:07:14 2015, Start block 0
+10: tmp.Lion, 0 bytes, 1435230434, Thu Jun 25 13:07:14 2015, Start block 0
+11: tmp.SnowLeopard, 0 bytes, 1435230434, Thu Jun 25 13:07:14 2015, Start block 0
+12: tmp.spotlight.loc, 9961 bytes, 1438141713, Wed Jul 29 05:48:33 2015, Start block 458757
+13: tmp.spotlight.state, 4096 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 622598
+14: fseventsd-uuid, 36 bytes, 1438141708, Wed Jul 29 05:48:28 2015, Start block 393217
+15: reverseStore.updates, 1 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 622602
+16: store.updates, 3 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 622601
+17: live.1.shadowIndexGroups, 6 bytes, 1438688945, Tue Aug  4 13:49:05 2015, Start block 163913
+18: live.1.shadowIndexHead, 4096 bytes, 1438688946, Tue Aug  4 13:49:06 2015, Start block 589824
+19: live.2.directoryStoreFile, 4096 bytes, 1438688943, Tue Aug  4 13:49:03 2015, Start block 524338
+20: live.2.directoryStoreFile.shadow, 1088 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 524374
+21: live.2.indexArrays, 4096 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 524322
+22: live.2.indexCompactDirectory, 1024 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 524321
+==== CUT =====
+</blockquote>
+</p>
+
+<br>
+<p>Note:
+<blockquote>
+    &bullet; Files that need the Extents Overflow File are marked with '<span class=cmd>_F_EOF_</span>'.<br>
+    &bullet; Compressed files are marked with '<span class=cmd>_F_COMPRESSED_</span>'.<br>
+</blockquote>
+</p>
+
+
+
+<br>
+<p>Use '--list' with '<span class=cmd>grep</span>' to get the file number when you want to restore a single file.
+<blockquote>
+<p>Command: <span class=cmd>hfsprescue --list | grep mynotes.txt</span></p>
+<p>Sample output: 
+<pre class=contents>2023: mynotes.txt, 966097 bytes, 1438688944, Tue Aug  4 13:49:04 2015, Start block 560458</pre>
+<p>The file number is 2023.</p>
+</blockquote>
+</p>
+
+
+<br>
+
+
+
+<a name=csv.html></a><br><h1>7. CSV export of file list</h1><hr><a name=full></a>
+
+<p>You can export a list of files that have been found to a CSV file, after you completed Step 2 '-s2'. The fields are separated by semicolon ';'.</p>
+<p>Fields: <span class=cmd>Number, File Name, Parent ID, Catalog ID, File Size, File RAW Time, File Time, Start block, HFS+ Compressed, EOF (ExtentsOverflowFile)</span>
+</p>
+
+<p>
+<blockquote>
+<p>Command: <span class=cmd>hfsprescue --csv files.csv</span></p>
+<p>Sample file: 
+<pre class=contents>
+"Number";"File Name";"Parent ID";"Catalog ID";"File Size";"File RAW Time";"File Time";"Start block";"HFS+ Compressed";"EOF"
+1;"permStore";26;106;66097;1438688944;"Tue Aug  4 13:49:04 2015";360458;"No";"No"
+2;"reverseDirectoryStore";26;62;65536;1438688940;"Tue Aug  4 13:49:00 2015";48344;"No";"No"
+3;"reverseDirectoryStore.shadow";26;78;3136;1435230435;"Thu Jun 25 13:07:15 2015";48375;"No";"No"
+4;"reverseStore.updates";26;96;1;1438688946;"Tue Aug  4 13:49:06 2015";557113;"No";"No"
+5;"shutdown_time";26;108;4;1438067146;"Tue Jul 28 09:05:46 2015";393216;"No";"No"
+6;"store.db";26;60;118784;1438688947;"Tue Aug  4 13:49:07 2015";48294;"No";"No"
+7;"store.updates";26;95;3;1438688946;"Tue Aug  4 13:49:06 2015";557112;"No";"No"
+8;"store_generation";26;65;4;1435230434;"Thu Jun 25 13:07:14 2015";48361;"No";"No"
+9;"tmp.Cab";26;33;0;1435230434;"Thu Jun 25 13:07:14 2015";0;"No";"No"
+10;"tmp.Lion";26;31;0;1435230434;"Thu Jun 25 13:07:14 2015";0;"No";"No"
+11;"tmp.SnowLeopard";26;30;0;1435230434;"Thu Jun 25 13:07:14 2015";0;"No";"No"
+12;"tmp.spotlight.loc";26;98;9961;1438141713;"Wed Jul 29 05:48:33 2015";458757;"No";"No"
+13;"tmp.spotlight.state";26;63;4096;1438688947;"Tue Aug  4 13:49:07 2015";622598;"No";"No"
+14;"fseventsd-uuid";28;29;36;1438141708;"Wed Jul 29 05:48:28 2015";393217;"No";"No"
+15;"reverseStore.updates";26;96;1;1438688947;"Tue Aug  4 13:49:07 2015";622602;"No";"No"
+16;"store.updates";26;95;3;1438688947;"Tue Aug  4 13:49:07 2015";622601;"No";"No"
+17;"live.1.shadowIndexGroups";26;132;6;1438688945;"Tue Aug  4 13:49:05 2015";163913;"No";"No"
+18;"live.1.shadowIndexHead";26;221;4096;1438688946;"Tue Aug  4 13:49:06 2015";589824;"No";"No"
+19;"live.2.directoryStoreFile";26;194;4096;1438688943;"Tue Aug  4 13:49:03 2015";524338;"No";"No"
+==== CUT =====
+</pre>
+</p>
+</blockquote>
+</p>
+
+<br>
+
+<a name=restore_one_file.html></a><br><h1>8. Restore one file</h1><hr><a name=full></a>
+
+<p>You can restore just one file instead of all files that have been found. This feature can be used after you completed Step 2 '-s2'.</p>
+<p><span class=cmd>hfsprescue --one-file &lt;device node|image file&gt; &lt;file number&gt; [-b &lt;block size&gt;] [-o &lt;offset in bytes&gt;] [-d &lt;working directory&gt;] [--vh-file &lt;file name&gt;] [--eof-file &lt;file name&gt;] [--alternative]</span></p>
+<p>You need the file number to restore a file. You get this number with using '<span class=cmd>hfsprescue --list</span>' or from the CSV export file.</p>
+<p>Example to restore a file called 'mynotes.txt':
+<blockquote>
+    <p>Command 1: <span class=cmd>hfsprescue --list | grep mynotes.txt</span></p>
+    <p>Sample output: 
+<pre class=contents>2023: mynotes.txt, 966097 bytes, 1438688944, Tue Aug  4 13:49:04 2015, Start block 560458</pre>
+<p>The file number is 2023.</p>
+
+    <p>Command 2: <span class=cmd>hfsprescue --one-file /dev/sdb2 2023</span></p>
+    <p>On success, you find the file 'mynotes.txt' in the '<span class=cmd>restored/</span>' directory.</p>
+</blockquote>
+</p>
+
+
+<br>
+
+
+<a name=restore_with_list.html></a><br><h1>9. Restore files with a list</h1><hr><a name=full></a>
+
+<p>
+When you don't want to restore all files in step 3, then you can use a list of files that you want to restore.
+Use the parameter '<span class=cmd>--file-list &lt;file name&gt;</span>' for a simple list or 
+'<span class=cmd>--file-list-csv &lt;file name&gt;</span>' for a list in CSV format.
+</p>
+
+<br>
+<h3>Simple list: --file-list &lt;file name&gt;</h3>
+
+<p>
+The list file has a simple format. At the beginning of the line is the file number (from <a href=#list.html>--list</a>), then comes a colon.
+After the colon can be any text. The text after the colon will be ignored.
+</p>
+
+<p>
+Sample file with 10 files to restore:
+<pre class=contents>
+1003:
+283:
+553:
+18: live.1.shadowIndexHead, 4096 bytes, 1438688946, Tue Aug  4 13:49:06 2015, Start block 589824
+19: live.2.directoryStoreFile, 4096 bytes, 1438688943, Tue Aug  4 13:49:03 2015, Start block 524338
+20: live.2.directoryStoreFile.shadow, 1088 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 524374
+21: live.2.indexArrays, 4096 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 524322
+22: live.2.indexCompactDirectory, 1024 bytes, 1438688947, Tue Aug  4 13:49:07 2015, Start block 524321
+450:
+451:
+</pre>
+</p>
+</blockquote>
+
+</p>
+<p>
+With this function its easy to select files to restore or exclude files from restoring.
+</p>
+<p>As step 4 restores the whole directory structure (even when you restore only a few files), can you use at the end after '-s6' the command
+'<span class=cmd>hfsprescue --remove-empty-dirs</span>' to remove the empty directories.</p>
+
+
+<br>
+<h3>Example: Exclude files</h3>
+<p>This example shows how to exclude files with the extensions '<span class=cmd>.download</span>' and '<span class=cmd>.part</span>' from restoring.</p>
+<p><span class=cmd>
+hfsprescue --list | grep -v ".download, " | grep -v ".part, " > files.list
+</span>
+</p>
+
+<p>
+&bull; '<span class=cmd>grep</span>' is used with '<span class=cmd>-v</span>' to exclude the pattern from the output.<br>
+&bull; As only files with the expected extensions should be excluded, the text '<span class=cmd>, </span>' is added at the end, because '--list' writes '<span class=cmd>, </span>' at the end of the file name.<br>
+&bull; '<span class=cmd>&gt;</span>' creates a new file with the output of 'grep'.<br>
+</p>
+
+<p>The command of step 3: <span class=cmd>hfsprescue -s3 /dev/sdb1 --file-list files.list</span>
+</p>
+
+<br>
+
+<h3>Example: Restore files with modification dates</h3>
+<p>This example creates a list with files that have a modification date of 4., 5. and 12. August 2015.
+</p>
+<p><span class=cmd>
+hfsprescue --list | grep " Aug&nbsp; 4 " | grep " 2015, " > files.list<br>
+hfsprescue --list | grep " Aug&nbsp; 5 " | grep " 2015, " >> files.list<br>
+hfsprescue --list | grep " Aug&nbsp;12 " | grep " 2015, " >> files.list
+</span>
+</p>
+
+<p>
+&bull; '<span class=cmd>grep</span>' is used get the text with the pattern.<br>
+&bull; Two 'grep' commands are used, because the year is interrupted from the month and day by the time.<br>
+&bull; The first command with '<span class=cmd>&gt;</span>' creates a new file with the output of 'grep'.<br>
+&bull; The other commands append with '<span class=cmd>&gt;&gt;</span>' the output of 'grep' to the output file.<br>
+</p>
+
+<p>The command of step 3: <span class=cmd>hfsprescue -s3 /dev/sdb1 --file-list files.list</span>
+</p>
+
+
+<br>
+<h3>Example: Exclude files with 0 bytes</h3>
+<p>This example creates a list with files that are bigger than 0 bytes.
+</p>
+<p><span class=cmd>
+hfsprescue --list | grep -v ", 0 bytes, " > files.list
+</span>
+</p>
+
+<p>
+&bull; '<span class=cmd>grep</span>' is used with '<span class=cmd>-v</span>' to exclude the pattern from the output.<br>
+&bull; '<span class=cmd>&gt;</span>' creates a new file with the output of 'grep'.<br>
+</p>
+
+<p>The command of step 3: <span class=cmd>hfsprescue -s3 /dev/sdb1 --file-list files.list</span>
+</p>
+
+
+
+
+
+<br>
+<h3>CSV: --file-list-csv &lt;file name&gt;</h3>
+
+<p>
+To accomplish a more complex filter for files, use some kind of Excel/Spreadsheet software.</p>
+<p>Export the file list with '<a href=#csv.html>--csv</a>'. 
+Import the file in your spreadsheet program and do the modfications. Then export/save the data to a new CSV file. The delimiter must be a
+semicolon. The header line (first line) will be ignored by hfsprescue.
+</p>
+
+<p>
+Sample file:
+<pre class=contents>
+"Number";"File Name";"Parent ID";"Catalog ID";"File Size";"File RAW Time";"File Time";"Start block";"HFS+ Compressed";"EOF"
+14;"fseventsd-uuid";28;29;36;1438141708;"Wed Jul 29 05:48:28 2015";393217;"No";"No"
+15;"reverseStore.updates";26;96;1;1438688947;"Tue Aug  4 13:49:07 2015";622602;"No";"No"
+16;"store.updates";26;95;3;1438688947;"Tue Aug  4 13:49:07 2015";622601;"No";"No"
+17;"live.1.shadowIndexGroups";26;132;6;1438688945;"Tue Aug  4 13:49:05 2015";163913;"No";"No"
+18;"live.1.shadowIndexHead";26;221;4096;1438688946;"Tue Aug  4 13:49:06 2015";589824;"No";"No"
+19;"live.2.directoryStoreFile";26;194;4096;1438688943;"Tue Aug  4 13:49:03 2015";524338;"No";"No"
+</pre>
+</p>
+</blockquote>
+
+
+<a name=find_vh.html></a><br><h1>10. Find the HFS+ Volume Header or Alternate Volume Header and the partition start offset</h1><hr><a name=full></a>
+<p>The Volume Header and Alternate Volume Header have important information about the HFS+ file system. Both can be used to find the start of a partition.
+</p>
+<p>Parameter: <span class=cmd>--find-vh</span> / <span class=cmd>--find-avh</span></p>
+
+<br>
+
+<h2>The Volume Header</h2>
+
+<p>The location of the Volume Header is 1024 bytes after the partition start. Finding the Volume Header is a good way to find the partition start. 
+The Volume Header has also important informations like the location and size of the Extents Overflow File.</p>
+
+
+<p>
+When you lost the partition table or you are working with a hard disk image then it's required to know the start offset of the partition
+with your HFS+ file system. One solution to get the partition start offset is to find the HFS+ Volume Header with the '<span class=cmd>--find-vh</span>'
+parameter. A HFS+ file system has a backup of the Volume Header (the Alternate Volume header). This means that hfsprescue will report a few hits. When you had only one HFS+
+partition on the drive, then the first hit should be the right one. You can use the '<span class=cmd>--first</span>' parameter to limit the
+output to the first detected HFS+ Volume Header. 
+</p>
+<p>
+A valid HFS+ Volume Header criteria of hfsprescue is the 
+'<span class=cmd>lastMountedVersion</span>' field. This field is set by the operating system that mounts the partition. Only Mac OS X and Linux
+is seen as valid by hfsprescue. When the last mount of the partition has been done by another OS, then use '<span class=cmd>-f</span>' to ignore the 
+OS limitation. If you need more details during the search process then use the '<span class=cmd>-v</span>' verbose parameter.
+</p>
+<p>When you use '<span class=cmd>-o &lt;offset in bytes&gt;</span>' then the search begins at the offset and skips the bytes before.</p>
+<p>The result of the search will be logged in the file '<span class=cmd>hfsprescue-data/find-vh.log</span>'.
+</p>
+<p><span class=cmd>hfsprescue --find-vh [-o &lt;offset in bytes&gt;] [--first] [-f|--force] [-v|--verbose]</span></p>
+
+<br>
+<p>Example: Show only the first HFS+ Volume Header.
+<blockquote>
+<p>Command: <span class=cmd>hfsprescue --find-vh /dev/sdb --first</span></p>
+<p>Sample output: 
+<pre class=contents>
+*** Stop searching after the first Volume Header has been found.
+
+Scanned 200 MB.
+============================================
+A Volume Header has been found.
+
+Partition start:     209735680 (Byte), 0xc805000, 409640 (LBA Sector), at 200 MB
+Volume Header start: 209736704 (Byte), 0xc805400, 409642 (LBA Sector), at 200 MB
+
+Signature:                      0x2b48, H+
+LastMountedVersion:             H+Lx, last mount by Linux.
+FileCount:                      4362
+DirCount:                       144
+BlockSize:                      4096
+TotalBlocks:                    244190208
+AllocationFile StartBlock:      1
+ExtentsOverflowFile StartBlock: 7454
+CatalogFile StartBlock:         10270
+</pre>
+    </p>
+    <p>
+	The partition start offset is '<span class=cmd>209735680</span>'. 
+    </p>
+    <p>
+	Use this value for the '<span class=cmd>-o &lt;offset in bytes&gt;</span>' parameter
+	in combination with '<span class=cmd>-s3</span>' and '<span class=cmd>--one-file</span>'.
+	
+    </p>
+    <p>Example: <span class=cmd>hfsprescue -s3 /dev/sdb -o 209735680</span>'</p>
+
+</blockquote>
+</p>
+
+<br>
+<p>You can extract the Volume Header. See <a href=#extract_vh.html>here</a>.</p>
+<blockquote>
+    <p>Example: <span class=cmd>hfsprescue --extract-vh /dev/sdb 409642</span></p>
+</blockquote>
+
+<br>
+
+<h2>The Alternate Volume Header</h2>
+<p>
+    The Alternate Volume Header is a backup of the Volume Header and is stored 1024 bytes before the end of the partition. 
+    When you know the location of the Alternate Volume Header, the block size and total blocks, then its possible to calculate the partition start.
+</p>
+<p>
+   The search for the Alternate Volume Header goes from the end of the hard disk to the beginning.
+</p>
+
+
+<p>The resultof the search is stored in '<span class=cmd>hfsprescue-data/find-avh.log</span>'.
+</p>
+
+<p><span class=cmd>hfsprescue --find-avh [--first] [-f|--force] [-v|--verbose]</span></p>
+<br>
+<p>Example: Stop after the first HFS+ Alternate Volume Header.
+<blockquote>
+<p>Command: <span class=cmd>hfsprescue --find-avh /dev/sdb --first</span></p>
+<p>Sample output: 
+<pre class=contents>
+*** Stop searching after the first Volume Header has been found.
+
+Searching backwards for the Alternate Volume Header.
+
+============================================
+A Volume Header has been found.
+
+Volume Header start: 1000412826624 (Byte), 0xe8ed404c00, 1953931302 (LBA Sector), at 954068 MB
+
+Signature:                      0x2b48, H+
+LastMountedVersion:             10.0, last mount by Mac OS X.
+FileCount:                      0
+DirCount:                       0
+BlockSize:                      4096
+TotalBlocks:                    244190208
+AllocationFile StartBlock:      1
+ExtentsOverflowFile StartBlock: 7454
+CatalogFile StartBlock:         10270
+
+Possible partition start: 209735680 (Byte), 0xc805000, 409640 (LBA Sector), at 200 MB
+</pre>
+    </p>
+    <p>
+        The possible start is at offset '<span class=cmd>209735680</span>'. 
+    </p>
+    <p>
+	Use this value for the '<span class=cmd>-o &lt;offset in bytes&gt;</span>' parameter
+	in combination with '<span class=cmd>-s3</span>' and '<span class=cmd>--one-file</span>'.
+	
+    </p>
+    <p>Example: <span class=cmd>hfsprescue -s3 /dev/sdb -o 209735680</span>'</p>
+</blockquote>
+</p>
+<br>
+
+<p>You can extract the Volume Header. See <a href=#extract_vh.html>here</a>.</p>
+<blockquote>
+    <p>Example: <span class=cmd>hfsprescue --extract-vh /dev/sdb 1953931302</span></p>
+</blockquote>
+
+<br>
+
+<a name=extract_vh.html></a><br><h1>11. Extract the HFS+ Volume Header</h1><hr><a name=full></a>
+
+<p>You can extract the Volume Header from the drive to a file with the
+'<span class=cmd>--extract-vh</span>' parameter.
+</p>
+
+<p>
+    <span class=cmd>hfsprescue --extract-vh &lt;device node|image file&gt; &lt;LBA sector&gt; [--vh-file &lt;output file&gt;]</span>
+</p>
+
+<p>Beside the device node or image file is the LBA sector number required to extract the Volume Header. When you don't know
+the LBA sector number, then it's possible to find the Volume Header. See <a href=#find_vh.html>Find the HFS+ Volume Header or Alternate Volume Header and the partition start offset</a>.
+</p>
+
+<p>You can use the Volume Header file in program modes like '-s1', '-s3', '--one-file' and others.</p>
+
+<p>
+    The default output file is '<span class=cmd>./restored/VolumeHeader</span>'. You can specify another output file name with '<span class=cmd>--vh-file</span>'.
+</p>
+
+<br>
+<p>Sample command: <span class=cmd>hfsprescue --extract-vh /dev/sdb 409642</span></p>
+
+
+<br>
+
+
+
+<a name=find_eof.html></a><br><h1>12. Find the Extents Overflow File</h1><hr><a name=full></a>
+<p>
+The Extents Overflow File is used to store the positions of file fragments when a file is split into more that 8 fragments on the file system. 
+When the Volume Header is destroyed or has a wrong entry for the Extents Overflow File, then its not possible to restore strong fragmented files.
+You can use '<span class=cmd>--find-eof</span>' to search for possible positions of the Extents Overflow File. 
+hfsprescue will report possible start blocks. I found no way to reduce the possible positions and exactly identify the Extents Overflow File. It should be one of the first 7 values. 
+</p>
+<p><span class=cmd>hfsprescue --find-eof [-b &lt;block size&gt;] [-o &lt;offset in bytes&gt;] [--vh-file &lt;file name&gt;] </span></p>
+
+<p>Note: When you use the '<span class=cmd>-o &lt;offset in bytes&gt;</span>' parameter, then the reported start blocks are relative to the offset value.</p>
+<p>Note: When the Volume Header is defect and you have a backup, then specify the file name with '<span class=cmd>--vh-file</span>'.</p>
+
+<p>When you found positions, then you can extract the Extents Overflow File to a file. See <a href=#extract_eof.html>Extract the Extents Overflow File</a>.</p>
+
+<br>
+<p>Example:
+<blockquote>
+<p>Command: <span class=cmd>hfsprescue --find-eof /dev/sdb2</span></p>
+<p>Sample output: 
+<pre class=contents>
+Searching block positions of the Extents Overflow File...
+
+1. Possible block: 217 | File position: 0xd9000
+2. Possible block: 487 | File position: 0x1e7000  maybe ExtentsOverflowFile or CatalogFile
+3. Possible block: 1023 | File position: 0x3ff000
+4. Possible block: 1149 | File position: 0x47d000
+5. Possible block: 2108 | File position: 0x83c000
+6. Possible block: 3132 | File position: 0xc3c000
+7. Possible block: 25660 | File position: 0x643c000
+==== CUT =====
+</pre>
+</p>
+<p>In this case, the correct start block was 2108 (the 5. entry). I tried all blocks until I got the correct one.</p>
+<p>When you find many possible blocks, then you have to test them with restoring a file that is strong fragmented. You have to extract
+the Extents Overflow File before you restore a file with '<span class=cmd>--one-file</span>' for testing.
+</p>
+</blockquote>
+</p>
+
+<br>
+
+<p>
+Info: When you have strong fragmented files, then 
+<blockquote>
+    &bull; those files will be reported in the log file of Step 3. Search for the text '<span class=cmd>_has_extents_overflows_</span>'. <br>
+    &bull; are marked with '<span class=cmd>_F_EOF_</span>' flag when you use '--list'.<br>
+    &bull; are reported in the CSV export.<br>
+</blockquote>
+</p>
+<br>
+
+
+<a name=extract_eof.html></a><br><h1>13. Extract the Extents Overflow File</h1><hr><a name=full></a>
+
+<p>The Extents Overflow File is required to restore heavy fragmented files. 
+The Extents Overflow File is extracted automatically to a file by hfsprescue when the Volume Header is valid and you use '-s3' or '--one-file'.
+</p>
+
+<p>You can extract the Extents Overflow File on demand with '<span class=cmd>--extract-eof</span>'.</p>
+
+<p>
+    <span class=cmd>hfsprescue --extract-eof &lt;device node|image file&gt;  [ [--start-block &lt;number&gt;] &lt; [--last-block &lt;number&gt;] | [--num-blocks &lt;number&gt;] &gt; ] [--eof-file &lt;output file&gt;] [--vh-file &lt;file name&gt;]</span>
+</p>
+
+<p>
+    The default output file is '<span class=cmd>./restored/ExtentsOverflowFile</span>'. You can set another file name with '<span class=cmd>--eof-file &lt;output file&gt;</span>'.
+</p>
+
+
+<p><i>Note: When you formatted the partition, then the Extents Overflow File is lost in the most cases.</i></p>
+
+<br>
+
+<h3>Valid Volume Header</h3>
+<p>
+    When your Volume Header is valid, then '<span class=cmd>--extract-eof</span>' does not need any additional parameters to extract the Extents Overflow File.
+</p>
+<p>
+    Example: '<span class=cmd>hfsprescue --extract-eof /dev/sdb1</span>'
+</p>
+
+<pre class=contents>
+Signature:                      0x2b48, H+
+LastMountedVersion:             H+Lx, last mount by Linux.
+FileCount:                      4362
+DirCount:                       144
+BlockSize:                      4096
+TotalBlocks:                    244190208
+AllocationFile StartBlock:      1
+ExtentsOverflowFile StartBlock: 7454
+CatalogFile StartBlock:         10270
+Total size:                     931 GB
+
+Extracting the ExtentsOverflowFile to 'restored/ExtentsOverflowFile'.
+
+Size: 11534336 bytes, 11.00 MB
+Clump Size: 11534336 bytes
+Total Blocks: 2816
+Extent 0: Start 7454, Num 2816
+Extent 1: Start 0, Num 0
+Extent 2: Start 0, Num 0
+Extent 3: Start 0, Num 0
+Extent 4: Start 0, Num 0
+Extent 5: Start 0, Num 0
+Extent 6: Start 0, Num 0
+Extent 7: Start 0, Num 0
+
+File created.
+</pre>
+
+<br>
+<h3>Extract with Volume Header problems</h3>
+<p>
+    When your Volume Header is defect, then you can use '<span class=cmd>--find-eof</span>' to locate possible positions of the Extents Overflow File. 
+    You can use those possible positions and try to extract the Extents Overflow File. When you extract with 
+    '<span class=cmd>--start-block</span>' and '<span class=cmd>--last-block</span>' / '<span class=cmd>--num-blocks</span>' then only the given range will
+    be extracted. When the Extents Overflow File itself has fragments, then its not possible to restore the whole file without a Volume Header. You can use
+    a Volume Header file with  '<span class=cmd>--vh-file &lt;file name&gt;</span>' when the partition Volume Header is defect.
+</p>
+
+<p><b>A simple example:</b></p>
+
+<p>&bull; At first, search for possible locations.</p>
+<p><span class=cmd>hfsprescue --find-eof /dev/sdb -b 4096</span></p>
+<pre class=contents>
+*** Force block size: 4096
+Signature:                      0x00,  (Unknown)
+LastMountedVersion:             , last mount was not done by Mac OS X.
+FileCount:                      0
+DirCount:                       0
+BlockSize:                      4096
+TotalBlocks:                    0
+AllocationFile StartBlock:      0
+ExtentsOverflowFile StartBlock: 0
+CatalogFile StartBlock:         0
+Total size:                     931 GB
+
+Searching block positions of the Extents Overflow File...
+
+1. Possible block: 7710 | File position: 0x1e1e000    
+2. Possible block: 10526 | File position: 0x291e000    maybe ExtentsOverflowFile or CatalogFile
+</pre>
+<p>&bull; Then extract the Extents Overflow File. We use as start block the first entry and as last block the second entry value -1.</p>
+<p><span class=cmd>hfsprescue --extract-eof /dev/sdb -b 4096 --start-block 7710 --last-block 10525</span></p>
+<pre class=contents>
+*** Force block size: 4096
+Signature:                      0x00,  (Unknown)
+LastMountedVersion:             , last mount was not done by Mac OS X.
+FileCount:                      0
+DirCount:                       0
+BlockSize:                      4096
+TotalBlocks:                    0
+AllocationFile StartBlock:      0
+ExtentsOverflowFile StartBlock: 0
+CatalogFile StartBlock:         0
+Total size:                     931 GB
+
+Extracting the ExtentsOverflowFile to 'restored/ExtentsOverflowFile'.
+*** Warning. No extents of the ExtentsOverflowFile will be restored.
+Extracting blocks from 7710 to 10525. 2816 blocks.
+File created.
+</pre>
+
+<p>
+You have to test the extracted Extents Overflow File with restoring a strong fragmented file.
+</p>
+<p>
+Use '<span class=cmd>hfsprescue --list | grep _F_EOF_</span>' to find an affected file.<br>
+Use '<span class=cmd>--one-file</span>' to restore the file. Then check the restored file.<br>
+</p>
+
+<p>When you find more possible positions, then you have to test them until you find the correct start/end of the Extents Overflow File.</p>
+
+
+<a name=remove_empty_dirs.html></a><br><h1>14. Remove empty directories</h1><hr><a name=full></a>
+
+<p> 
+    The whole directory structure will be recovered in step 4. Even, when you recover only a few files ins step 3.
+    Now, you have a lot of empty directories at the end of step 6 '-s6'. You can remove them with '<span class=cmd>--remove-empty-dirs</span>'.
+</p>
+
+<p>
+<span class=cmd>hfsprescue --remove-empty-dirs [--dir &lt;directory&gt;] [-f|--force]</span>
+</p>
+
+<p>
+    The standard start directory is '<span class=cmd>./restored</span>'. You can set a directory with '<span class=cmd>--dir</span>'.
+</p>
+
+<p>
+    Before the program removes the empty directores, it shows the full start path and ask you to continue. You have to enter 
+    '<span class=cmd>y</span>' and the program starts. You can skip the question with the parameter
+    '<span class=cmd>-f</span>' or '<span class=cmd>--force</span>'.
+</p>
+
+<br>
+
+
+
+
+<a name=find_bytes.html></a><br><h1>15. Find bytes from a file and/or an Unicode string</h1><hr><a name=full></a>
+<p>An additional debug/search feature is to find bytes from a file and/or Unicode strings. -ff and -fi can be used with the same command.</p>
+<p><span class=cmd>hfsprescue --find &lt;device node|image file&gt; [-ff &lt;num bytes&gt; &lt;file1&gt; [file2] [...]] [-fs &lt;string>] [-o &lt;offset in bytes&gt;]</span></p>
+
+<br>
+
+<p>&bull; <b>Find bytes of one or more files -ff</b></p>
+
+<p>You can find the bytes of 
+a file. This can be very useful when you lost the partition table and you have to 
+<a href=#partition_table_damaged.html>calculate the offset of the partition</a>. 
+It makes no sense to search for the whole file. It can be fragmented
+and you will never get a hit. The file size of the source file is not limited by hfsprescue. Regardless to the file size is the maximum search buffer size 1MB. This this is really large. I suggest
+to use the block size as maximum search length. 
+</p>
+<p>The result of the search will be logged in the file '<span class=cmd>hfsprescue-data/find.log</span>'.
+</p>
+<p>When you use '<span class=cmd>-o &lt;offset in bytes&gt;</span>' then the search begins at the offset and skips the bytes before.</p>
+
+<p><b>Find bytes example 1:</b>
+<blockquote>
+    <p>Command: <span class=cmd>hfsprescue --find /dev/sdb2 -ff 4096 PerfectPicture.jpg</span><p>
+    <p>Sample output: <pre class=contents>File PerfectPicture.jpg: Bytes found at offset 746586112 + 28672 = 746614784 (0x2c800000 + 0x7000 = 0x2c807000)</pre></p>
+</blockquote>
+</p>
+<br>
+
+<p><b>Find bytes example 2: Multiple files</b>
+<blockquote>
+    <p>Command: <span class=cmd>hfsprescue --find /dev/sdb2 -ff 4096 PerfectPicture.jpg anyfile.doc</span><p>
+    <p>Sample output: <pre class=contents>File anyfile.doc: Bytes found at offset 0 + 401408 = 401408 (0x0 + 0x62000 = 0x62000)
+File PerfectPicture.jpg: Bytes found at offset 746586112 + 28672 = 746614784 (0x2c800000 + 0x7000 = 0x2c807000)</pre></p>
+</blockquote>
+</p>
+<br>
+
+
+<p>&bull; <b>Find string -fs</b></p>
+<p>
+This can be used to find an Unicode string. File names are encoded in Unicode. Its possible to find directory entries with this feature. The search string will be converted to Unicode by
+hfsprescue.</p>
+<p>The result of the search will be logged in the file '<span class=cmd>hfsprescue-data/find.log</span>'.
+</p>
+<p>When you use '<span class=cmd>-o &lt;offset in bytes&gt;</span>' then the search begins at the offset and skips the bytes before.</p>
+<p><b>Find string example:</b>
+<blockquote>
+    <p>Command: <span class=cmd>hfsprescue --find /dev/sdb2 -fs myimportantfile.doc</span></p>
+    <p>Sample output: <pre class=contents>String "myimportantfile.doc" found at offset 1048576 + 326870 = 1375446 (0x100000 + 0x4fcd6 = 0x14fcd6)
+String "myimportantfile.doc" found at offset 1048576 + 494446 = 1543022 (0x100000 + 0x78b6e = 0x178b6e)</pre>
+    </p>
+</blockquote>
+</p>
+
+<br>
+
+
+
+<a name=files.html></a><br><h1>16. Files &amp; Logs of hfsprescue</h1><hr><a name=full></a>
+
+<p>hfsprescue stores it's files in the directory '<span class=cmd>./hfsprescue-data/</span>' or the directory you sett with '<span class=cmd>-d</span>'.</p>
+
+    <table border=0 cellspacing=5 cellpadding=5>
+    <tr>
+	<td class=cmd>filesfound.db</td><td>&nbsp;</td><td>Detail infos about recoverable files, duplicate entries not removed.</td>
+    </tr>
+    <tr>
+	<td class=cmd>fileinfo.db</td><td>&nbsp;</td><td>Detail infos about recoverable files, duplicate entries removed.</td>
+    </tr>
+    <tr>
+	<td class=cmd>fileinfo.sha</td><td>&nbsp;</td><td>Helper file to cleanup the file database.</td>
+    </tr>
+    <tr>
+	<td class=cmd>foldertable.db</td><td>&nbsp;</td><td>Detail infos about recoverable directory structure.</td>
+    </tr>
+    <tr>
+	<td class=cmd>s1.log</td><td>&nbsp;</td><td>Log file of Step 1.</td>
+    </tr>
+    <tr>
+	<td class=cmd>s2.log</td><td>&nbsp;</td><td>Log file of Step 2.</td>
+    </tr>
+    <tr>
+	<td class=cmd>s3.log</td><td>&nbsp;</td><td>Log file of Step 3.</td>
+    </tr>
+    <tr>
+	<td class=cmd>s4.log</td><td>&nbsp;</td><td>Log file of Step 4.</td>
+    </tr>
+    <tr>
+	<td class=cmd>s5.log</td><td>&nbsp;</td><td>Log file of Step 5.</td>
+    </tr>
+    <tr>
+	<td class=cmd>onefile.log</td><td>&nbsp;</td><td>Log file when recovering one file '--one-file'.</td>
+    </tr>
+    <tr>
+	<td class=cmd>find.log</td><td>&nbsp;</td><td>Log file of byte and/or Unicode search.</td>
+    </tr>
+    <tr>
+	<td class=cmd>find-eof.log</td><td>&nbsp;</td><td>Log file of Extents Overflow Files search '--find-eof'.</td>
+    </tr>
+    <tr>
+	<td class=cmd>extract-eof.log</td><td>&nbsp;</td><td>Log file of Extents Overflow Files extract to file '--extract-eof'.</td>
+    </tr>
+    <tr>
+	<td class=cmd>find-vh.log</td><td>&nbsp;</td><td>Log file of Volume Header / partition search '--find-vh'.</td>
+    </tr>
+    <tr>
+	<td class=cmd>find-avh.log</td><td>&nbsp;</td><td>Log file of Alternate Volume Header search '--find-avh'.</td>
+    </tr>
+    </table>
+</p>
+<p>
+    <i>Note: Logs are appended when you restart an action. Its uppon the user to truncate/remove the log files.</i>
+</p>
+
+
+<br>
+
+<a name=restored_directory.html></a><br><h1>17. The 'restored' directory</h1><hr><a name=full></a>
+
+    <p>The '<span class=cmd>restored</span>' directory will be created in the directory where you start hfsprescue or you set with the '<span class=cmd>-d</span>' parameter. Your
+    files and directories will be recoverd to this directory.
+    </p>
+    
+    <p>When you use '<span class=cmd>--one-file</span>', then the restored file will be written directly to the 'recovered' directory
+    without any path.
+    </p>
+
+    <p>After step 6 has been completed, there are also a few additional files and directories, created by hfsprescue.</p>
+    
+    <p>Directory: <span class=cmd>restored/newroot/recovered/</span>
+    <blockquote>
+	You find your recovered files here.
+    </blockquote>
+    </p>
+    <p>Directory: <span class=cmd>restored/newroot/x_directory_problem/</span>
+    <blockquote>
+	It was not possible to link the files and directories to their parent directory. You will find here files too.
+    </blockquote>
+    </p>
+    <p>Directory: <span class=cmd>restored/newroot/x_unknown/
+    </span>
+    <blockquote>
+	No valid parent directory has been found. Maybe you will find here already deleted files. The files in this directories can be invalid.
+    </blockquote>
+    </p>
+    
+    <p>Files in <span class=cmd>restored/newroot/</span>
+    <blockquote>
+	<span class=cmd>INFO.TXT</span>
+	<blockquote>
+	    Just an info file for you.
+	</blockquote>
+	
+	<span class=cmd>recovered-files.txt, x_directory_problem-files.txt, x_unknown-files.txt</span>
+	<blockquote>
+	    The contents of those files is just a list of the files in the corresponding directory. Useful when you need an overview of the restored files.
+	</blockquote>
+    </blockquote>
+    </p>
+
+
+<br>
+
+<a name=faq.html></a><br><h1>18. Problems / FAQ</h1><hr><a name=full></a>
+
+<p>
+The following articles are about why files are defect recovered and what you can do against it. Mostly its a problem because of a wrong access to the partition data. 
+You will also see how you can find the start of a partition.
+</p>
+<p><b>Overview:</b>
+<blockquote>
+&bull; Restored files are invalid/defect! Why?<br>
+&bull; Partition table damaged, lost or not usable! How do I find the correct partition offset?<br>
+&bull; How do I find the correct partition offset with a reference file.<br>
+&bull; Unusual block size.<br>
+&bull; Extents Overflow File problems.<br>
+&bull; Permission denied.<br>
+&bull; Precompiled - FATAL: kernel too old.<br>
+&bull; sudo: hfsprescue: command not found.<br>
+&bull; Problem with file names that have accents.<br>
+
+</blockquote>
+</p>
+
+
+<br>
+
+
+
+
+<a name=invalid_files.html></a><br><h1>19. Restored files are invalid/defect! Why?</h1><hr><a name=full></a>
+
+<p>
+Reasons for invalid/defect files can be
+<blockquote>
+<p>- you are using a wrong partition start (because of a corrupt partition table or you working with a complete hard disk image, and so on).</p>
+<p>- the file has been deleted and overwritten on the damaged file system.</p>
+<p>- you are using a wrong block size.</p>
+<p>- it was not possible to export the Extents Overflow File.</p>
+<p>- the Extents Overflow File is damaged.</p>
+</blockquote>
+</p>
+<p>The most cases are a wrong partition start. See <a href=#partition_table_damaged.html>here</a> how to get the correct partition start offset.</p>
+
+<br>
+
+
+
+<a name=partition_table_damaged.html></a><br><h1>20. Partition table damaged, lost or not usable! How do I find the correct partition offset?</h1><hr><a name=full></a>
+
+<p>
+    HFS+ Rescue can help you to find the correct partition offset when
+</p>
+<p>
+    &bull; you are working with a real drive and
+    <blockquote>
+	- the partition table has been damaged.<br>
+	- the partition table has been overwritten with new partition data.<br>
+	- the partition table doesn't exists anymore.<br>
+	</blockquote>
+    OR<br><br>
+    &bull; you are working with a complete hard disk image and
+    <blockquote>
+	- you are unable to use the program kpartx.<br>
+	- the partition table has been damaged.<br>
+	- the partition table has been overwritten with new partition data.<br>
+	- the partition table doesn't exists anymore.<br>
+    </blockquote>
+</p>
+<br>
+<p><b>When do I need the partition start offset?</b></p>
+<p>
+    When you are unable to access the partition then hfsprescue cannot read the block size and the start block of the Extents Overflow File. Also it's
+    not possible to successful restore the files, because they are stored relative to the partition start. 
+</p>
+<p>
+    There are 2 ways to find the partition start offset with hfsprescue. 
+    <blockquote>
+	<p>1. When your HFS+ Volume Header is ok, then see <a href=#find_vh.html>Find the HFS+ Volume Header and the partition start offset</a>.</p>
+	<p>2. When you have a reference file, then see <a href=#partition_offset.html>How do I find the correct partition offset with a reference file</a>.</p>    
+    </blockquote>
+</p>
+<br>
+
+
+
+
+
+
+<a name=partition_offset.html></a><br><h1>21. How do I find the correct partition offset with a reference file</h1><hr><a name=full></a>
+
+<p>Before you can start, it's required that you completed the file restore Steps 1 & 2. When you did that some time ago then continue.</p>
+<p>You should know the block size of the damaged file system. Usually it's 4096. When the partition is bigger than 2 TB, then the usual block size is 8192.
+</p>
+<p>You need a file that was on the drive. It can be any type of file. Maybe the executable file of a program (get it from another computer) or a picture file (maybe from an old backup). 
+I prefer a picture file. Choose a file that was nearly only once on the drive to reduce false hits.
+</p>
+
+<br>
+<p><b>1) At first check if the file has been found during -s1 and -s2. For this example I am using a picture file called 'PerfectPicture.jpg'.</b></p>
+<p><span class=cmd>hfsprescue --list | grep PerfectPicture.jpg</span></p>
+<p>Sample output:
+<pre class=contents>77: PerfectPicture.jpg, 892187 bytes, Sun May 10 18:21:18 2015, Start block 131074</pre>
+</p>
+<p>Great, the 'PerfectPicture.jpg' file has been found. And we have luck, it was only once on the drive ;). When you have a file that has been found more than once, then
+either choose another file or you have to test various offset values at the end of the process until you have the right one.
+</p>
+
+
+<p><b>2) The next step is to do a byte search for the file on the drive.</b></p>
+<p><span class=cmd>hfsprescue --find /dev/sdb -ff 4096 PerfectPicture.jpg</p>
+<p>Sample output:
+<pre class=contents>File bytes found at offset 746586112 + 28672 = 746614784 (0x2c800000 + 0x7000 = 0x2c807000)</pre>
+</p>
+<p>Great, the bytes of our file have been found and what a surprise, the bytes have been found also only once. When the bytes have been found more than once, then you have to calculate offset values with the other found offsets too.</p>
+<p><b>3) The formula.</b></p>
+<p><span class=cmd>offset = byte_search_result - list_start_block * block_size</span></p>
+<p>With our values it looks like</p>
+<p><span class=cmd>offset = 746614784 - 131074 * 4096</span></p>
+<p>When you doesn't have a calculator then use the shell for the calculation.</p>
+<p><span class=cmd>echo $((746614784 - 131074 * 4096))</p>
+<p>The result is <span class=cmd>209735680</span></p>
+<p>A simple check if it could be a correct result is to modulo the value with 512. <span class=cmd>echo $((209735680 % 512))</span> the result must be <span class=cmd>0</span>.</p>
+
+<p><b>4) Check if the calculated offset is correct.</b></p>
+<p>Restore the file with '<span class=cmd>--one-file</span>' and the file number from '<span class=cmd>--list</span>' and the calculated offset value.</p>
+<p><span class=cmd>hfsprescue --one-file /dev/sdb 77 -b 4096 -o 209735680</span></p>
+<p>This command restored the file to <span class=cmd>restored/PerfectPicture.jpg</span>.</p>
+<p>Now compare the reference file with the restored file. <span class=cmd>diff PerfectPicture.jpg restored/PerfectPicture.jpg</span></p>
+<p>When '<span class=cmd>diff</span>' doesn't report a difference, then the offset value for the partition is correct.</p>
+<p>Remove the old '<span class=cmd>restored/</span>' directory and restart with Step 3 '<span class=cmd>-s3</span>' and use the calculated offset value with '<span class=cmd>-o</span>'.</p>
+<p>Example: <span class=cmd>hfsprescue -s3 /dev/sdb -b 4096 -o 209735680</span></p>
+
+
+
+
+<br>
+
+
+
+
+<a name=unusual_block_size.html></a><br><h1>22. Unusual block size</h1><hr><a name=full></a>
+
+<p>
+The correct block size is required to restore files. The block size is stored in the HFS+ Volume Header. When this header is corrupt or not available, 
+then its not possible for hfsprescue to determine
+the correct block size. There can be many reasons for a corrupt header. Either it is really overwritten by some data or you do not access the partition from it's beginning
+(Common mistake when you work with a complete hard disk image). 
+</p>
+<p>Solutions:
+<blockquote>
+    <p>On overwritten/corrupt Volume Header: Use a common block size value and set it with '<span class=cmd>-b</span>'.<br> Example: <span class=cmd>-b 4096</span></p>
+    <p>When you work with a hard disk image: Use kpartx or set the partition start offset with '<span class=cmd>-o</span>'.</p>
+    <p>On lost partition table: Set the partition start offset with '<span class=cmd>-o</span>'.</p>
+</blockquote>
+</p>
+<br>
+<p>
+    Usually, the value for the block size is '<span class=cmd>4096</span>'. When the partition is bigger than 2 TB, then the usual block size is '<span class=cmd>8192</span>'.
+</p>
+
+<br>
+
+<a name=eof_problems.html></a><br><h1>23. Extents Overflow File problems</h1><hr><a name=full></a>
+
+<p>
+    When you have strong fragmented files, then its required to access the Extents Overflow File which is an area on the HFS+ partition.
+    When this area has been overwritten, then there is no chance to restore files that have information stored in the affected area. 
+</p>
+
+<p>With '<span class=cmd>--find-eof</span>' you can search for possible start blocks of the Extents Overflow File.</p>
+<p>With '<span class=cmd>--extract-eof</span>' its posbbile to save the Extents Overflow File into a file. This file can be used for the restore process.</p>
+
+
+
+<br>
+
+
+
+<a name=permission_denied.html></a><br><h1>24. Permission denied</h1><hr><a name=full></a>
+
+<p>
+When you try to access a device, then you need <span class=cmd>root</span> permissions. 
+Just use '<span class=cmd>sudo</span>'.
+</p>
+<p>
+Example: <span class=cmd>sudo hfsprescue -s1 /dev/sdb2</span>
+</p>
+<p>
+or change to the root user with '<span class=cmd>su</span>'.
+</p>
+<p>It's also possible that the device is mounted. Unmount the device before you run hfsprescue. For Mac OS X see <a href=#osx.html>here</a>.</p>
+
+
+
+<br>
+
+
+
+<a name=sudo.html></a><br><h1>25. sudo: hfsprescue: command not found</h1><hr><a name=full></a>
+
+
+<p>
+When you start hfsprescue with 'sudo' and the program is not in your PATH, then you have to set a path. 
+</p>
+
+<p>
+    Example: <span class=cmd>hfsprescue</span> is in the current directory: <span class=cmd>sudo ./hfsprescue</span>
+</p>
+
+<br>
+
+
+
+
+<a name=kernel_too_old.html></a><br><h1>26. Precompiled - FATAL: kernel too old</h1><hr><a name=full></a>
+
+
+<p>
+The x86 Linux versions are compiled against LibC 2.11. When your Linux distribution is using an older version then you will
+see the error '<span class=cmd>FATAL: kernel too old</span>'. You have to compile the source code on your computer. You need 
+the GCC (GNU Compiler Collection) installed to compile hfsprescue.
+</p>
+
+<br>
+
+
+<a name=unicode_utf8.html></a><br><h1>27. File name accent troubles</h1><hr><a name=full></a>
+
+
+<p>
+This is related <b>for other operating systems than Mac OS X</b>.
+</p>
+
+<p>
+The unicode to UTF-8 file name conversion is not fully supported. There are problems
+with accents on non Mac OS X systems.
+</p>
+<p>A fix: The accents should be corrected when you copy the restored files to a HFS+ file system.</p>
+
+<p>This bug will be fixed maybe in a further version.</p>
+                                    
+
+<br>
+
+
+
+
+<a name=asian.html></a><br><h1>28. Asian file names</h1><hr><a name=full></a>
+
+
+<p>
+When you have files with asian file names, then you have to set '<span class=cmd>--utf8len 2</span>' on step 2.
+</p>
+<p>Example: <span class=cmd>hfsprescue -s2 --utf8len 2</span></p>
+
+<p>When you don't set the utf8len, then all files with asian chars will be seen as false file name and filtered.</p>
+<p><i>Note: You don't have to run again -s1 to change the utf8len. Just run again -s2 with the required setting.</i></p>
+<br>
+
+
+
+
+<a name=osx.html></a><br><h1>29. Mac OS X notes</h1><hr><a name=full></a>
+
+<p>
+When you try to restore data from a drive that is automatically mounted when you connect it, 
+then unmount it with '<span class=cmd>diskutil</span>'.
+This situation can happen when you connect a drive with a valid file system. Maybe after an 
+unwanted fresh formatting.
+</p>
+<p>
+Just figure out the device name with  '<span class=cmd>mount</span>'.
+</p>
+<p>Sample output: 
+<pre class=contents>
+/dev/disk0s2 on / (hfs, local, journaled)
+devfs on /dev (devfs, local, nobrowse)
+map -hosts on /net (autofs, nosuid, automounted, nobrowse)
+map auto_home on /home (autofs, automounted, nobrowse)
+/dev/disk6s2 on /Volumes/Untitled (hfs, local, nodev, nosuid, journaled, noowners)
+</pre>
+The affected partition is '<span class=cmd>/dev/disk6s2 (/Volumes/Untitled)</span>'.
+</p>
+<p>Unmount the partition with
+'<span class=cmd>sudo diskutil umount /dev/disk6s2</span>'.</p>
+<p>Now you are able to access the partition with hfsprescue.</p>
+<p>Example: <span class=cmd>sudo hfsprescue -s1 /dev/disk6s2</span></p>
+
+
+<br>
+
+
+
+<a name=personal_notes.html></a><br><h1>30. Personal notes</h1><hr><a name=full></a>
+
+<p>
+I wrote the first version of this tool for my neighbour. He was unable to mount the HFS+ partition. He got the
+error '<span class=cmd>hfs: failed to load catalog file</span>' and some other errors
+about the B-Tree. I was able to restore the most files.
+</p>
+<p>
+Meanwhile, my program became very sophisticated with many features. When there are still problems then just contact me, but don't forget a friendly "hello".
+</p> 
+
+<br>    
+
+
+
+    
+    <hr>
+    <p align=center>&copy; 2020 by Elmar Hanlhofer
+     <br><span style="font-size: 9pt">This page was last modified on 26/Apr/2020.</font>    </p>
+
+</body>
+</html>

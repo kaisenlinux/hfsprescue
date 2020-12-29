@@ -1,0 +1,334 @@
+2020/04/26 3.5 by Elmar Hanlhofer, Alan D. Salewski
+
+    Elmar Hanlhofer:
+    
+    * Configure script fix for OSX. OS detection in configure.ac to do not 
+      check for OpenSSL on OSX. OpenSSL is needed for SHA. Using other lib on
+      OSX for SHA.
+      
+    * Elapsed typo fixed.
+    
+    * New parameter '-d' for a destination directory instead of using
+      the current working directory.
+      
+    * Missing space on information text for the next command added.
+    
+    Alan D. Salewski: 
+    
+    * Print Volume Header dates.
+
+    
+
+2018/02/16 3.4 by Elmar Hanlhofer
+
+    * LBA fix for extracting Volume Header.
+
+    * Break on endless loop at step 1. (Untested)
+
+    * Maximum path length increased.
+    
+    
+
+2017/03/31 3.3 by Elmar Hanlhofer
+
+    * Additional valid file name check with UTF-8 encoding rules.
+    
+    * -s2 does not need the parameters of -s1. The parameters of -s1 are now
+      stored in a file and loaded to inform the user about the parameters
+      for -s3.
+    
+    * -s2: New parameter --future-days <days> 
+      Used for false file detection. Files with a creation date in the future
+      are ignored.
+      Default value is 7. 
+
+    * -s2: New parameter --utf8len <1 to 5>
+      Used for false file name detection. When you don't have file names with
+      asian chars, then you don't have to use this option. The default value 1. 
+      Use 2 when you have asian file names.
+      The values 3 to 5 should not be used.
+      
+    * --find: -ff allows now multiple file search at once. The number of bytes 
+      is now the first parameter of -ff. The other parameters are the file
+      names until '-' is detected.
+    
+    * CSV export: Column "Invalid start block" added.
+    
+    * List files: Flags _F_EOF_, _F_COMPRESSED_ and _F_INVALID_START_BLOCK_ 
+      added.
+    
+    * utf8mac.cpp: Fix narrowing conversion with checking for __arm__.
+    
+    * Help text: Replaced "argument" with "parameter".
+    
+    * Minor fixes.
+      
+
+
+2016/11/29 3.2 by Elmar Hanlhofer
+
+    * utf8mac.cpp: GCC 6.2: Fix narrowing conversion error -1 from int to char.
+      Replaced the char value -1 with 255.
+    
+    * CSV export includes now the block number and info about EOF.
+    
+    * New parameter --file-list-csv
+      Restore with CSV list.
+
+    * Help screen updated.
+    
+    * Mac OS X segfault fix on help screen.
+    
+
+
+2016/09/14 3.1 by Elmar Hanlhofer
+
+    * Fix 'invalid suffix on literal' warning with GCC 6.x
+    
+    
+
+2016/07/28 3.0 by Elmar Hanlhofer
+
+    * Added '--version' parameter.
+    
+    * Restore file when already restored version has 0 bytes.
+    
+    * Start, end and elapsed time output.
+    
+    * ExtentsOverflowFile routines rewritten.
+    
+    * Using inttypes.h for value output.
+    
+    * Replaced all HFS+ related unsigned integers to uint16_t, uint32_t, uint64_t.
+    
+    * Fix: File names and directories with name length < 3 haven't been restored.
+    
+    * Parameter -e removed.
+    
+    * Find Volume Header: '--first' fixed.
+    
+    * Extract a Volume Header with '--extract-vh'.
+    
+    * Find Alternate Volume Header with '--find-avh'.
+    
+    * Using external file as VolumeHeader.
+    
+    * Using ExtentsOverflowFile as external file.
+    
+    * Display data of possible Volume Header.
+
+    * Various ways to extract the ExtentsOverflowFile '--extract-eof'.
+
+    * Added CatalogFile info on '--find-eof'.
+
+    * Segfault: Invalid directory file name fix.
+    
+    * File scan: Just skip 2 bytes on invalid file name.
+    
+    * Print unsigned ID in folderinfo.db.
+    
+    * Ignore duplicate directory IDs.
+
+    * Scan and skip looping directories.
+    
+    * Append logs instead of truncating the log files.
+    
+    * Disable program abort on file create error '--ignore-file-error'
+    
+    * Enable file restore when more blocks allocated as needed '--ignore-blocks'.
+    
+    * Special tags to mark file in log files
+	_too_many_blocks_skipped_
+	_file_create_error_
+	_double_file_name_
+	_has_extents_overflows_
+
+    * Restore files from a file list in step 3 '--file-list'.
+    
+    * Additional marks on --list
+	_F_EOF_: File needs Extents Overflow File.
+	_F_COMPRESSED_: File is compressed.
+    
+    * New field on CSV export: EOF: Yes/No.
+
+    * Remove empty directories '--remove-empty-dirs'.
+
+    * On help display, wait for enter, before printing next page.
+
+    * Added doc directory with HTML, PDF and Text version of the documentation.
+    
+    * Big file restore fixed.
+    
+    * Unicode / UTF-8 routine for non Mac OS X updated. It's not perfect, but 
+      the best I can give at the moment.
+
+
+
+2015/12/19 2.2 by Elmar Hanlhofer
+    
+    * Fix file name with '/' on Mac OS X
+    
+    * --slash parameter for --list and --csv added
+
+
+2015/11/19 2.1 by Elmar Hanlhofer
+    
+    * Add "Done." at the end of the log files.
+    
+    * Restore Step 2 Updated. 
+    
+    * Step 2 renamed to "cleanup file name database".
+    
+    * FIX: Create root directory when there are no subdirectories.
+    
+    * File name FIX: Swap unicode bytes on non Apple machines.
+    
+  by Jeremy Apthorp:
+    
+    * Replaced algorithm to remove duplicate database entries in Step 2 
+      with qsort.
+
+    
+2015/09/01 2.0 by Elmar Hanlhofer
+    
+    * Many code updates, bug fixes and code optimization.
+
+    * Restore steps have been changed. Now there are 6 Steps to complete.
+    
+    * New options for the restore steps added.
+
+    * Hfsprescue files are now in an own directory called 'hfsprescue-data/'.
+    
+    * Log file names have been changed.
+
+    * File name extension changed to the correct extension from .c to .cpp.
+      
+    * --is-lightweight warning fixed: Removed the files missing, install.sh 
+      and depcom. Then running automake --add-missing --copy and autoreconf -i.
+      
+    * m4 directory warning fixed:  m4 directory removed in Makefile.am.
+      
+    * Next Step information output is printed with the executed program name 
+      from the command line. C++ argument argc[0].
+      
+    * More details are shown now with the next step information during the 
+      restore process.
+      
+    * Compiler warnings fixed.
+    
+    * Print better information on file create/open errors.
+    
+    * Use offset parameter for volume sector fixed.
+
+    * UTF8 / Unicode conversion fixed.
+    
+    * Man page updated.
+
+    * README file updated.
+    
+    * Partition start offset calculation added to the documentation.
+    
+    * Unable to create file error: too many open files (decompress) fixed.
+    
+    * New option to choose alternative file names on restoring if a file 
+      already exists. --alternative
+      
+    * Restore only latest file if the new parameter --alternative is not used.
+    
+    * Restoring of strong fragmented files added.
+      
+    * New search mode to find the Extents File Overflow start block added.
+      
+    * New option to set the Extents File Overflow start block added.
+    
+    * New option to continue file restore on given file number.
+    
+    * New mode to restore just one specific file. --one-file
+    
+    * Remove duplicate file entries from filesfound.db.
+    
+    * New mode to list contents of fileinfo.db. --list
+      
+    * New mode to export contents of fileinfo.db to a csv file. --csv
+    
+    * New mode to find the HFS+ Volume Header / partition start offset.
+    
+    * Replace file name char '/' with ':' on none Mac OS.
+    
+    * Static build option '--enable-static' added for ./configure
+      Modified configure.ac.
+      
+    * Display more infos on search unicode.
+
+    * Display more infos on search bytes from a file.
+
+    * Recover directory structure bug fixed and optimized.
+    
+    * Read correct block device size on Mac OS X. Fixed
+    
+    * Added freebsd.h to compile the program on FreeBSD.
+    
+    * Addtional information files will be created on Step 6 in the
+      rested/newroot directory.
+    
+    * Additional long versions of options added.
+
+    * --help updated.
+    
+    * RC2: Step 2 - Hash malloc fix by Joseph Gentle 2015/08/11
+
+
+2015/02/02 1.1 by Elmar Hanlhofer
+
+    * -L path for zlib
+
+    * unsigned long long print fixes
+
+    * Large file problem on 32bit systems fixed
+
+    * Print file name on decompression
+
+    * Compilation issues on MAC OS X fixed
+
+    * Minor bug fixes
+        
+
+2015/01/12 1.0
+
+    * Completely rewritten from scratch by Elmar Hanlhofer
+     
+      Many bug fixes
+      Output infos changed
+      5 steps have to be completed
+      Log files for every step
+      Restoring file creation date
+      Detailed file informations in fileinfo.txt
+      Restoring directory structure optimized
+      HFS+ compression is now supported
+      Man page added
+      Find unicode string on sectors
+      Find bytes of a file on sectors
+      Custom block size
+      Custom partition start offset
+      
+
+2013/01/19 0.3
+
+    * Automake and configure by Masaki Muranaka and Elmar Hanlhofer
+
+    * Restore script generation rewritten by Elmar Hanlhofer
+
+
+2011/11/25 0.2
+
+    * Segfault bugfix by Elmar Hanlhofer
+
+
+2011/10/05 0.1-patch
+    
+    * fstat fix, Makefile clean update by Elmar Hanlhofer
+
+
+2010/11/30 0.1
+    
+    * Initital release by Elmar Hanlhofer
