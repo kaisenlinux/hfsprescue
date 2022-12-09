@@ -1,14 +1,14 @@
 Source: hfsprescue
-Section: otherfs
+Section: admin
 Priority: optional
-Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
 Build-Depends: debhelper, autotools-dev, make, zlib1g-dev, libssl-dev
-Standards-Version: 4.5.1
+Standards-Version: 4.6.1
 Homepage: https://www.plop.at/en/hfsprescue/full.html
 Vcs-Browser: https://gitlab.com/kaisenlinux/packages/hfsprescue
 Vcs-Git: https://gitlab.com/kaisenlinux/packages/hfsprescue.git
 
 Package: hfsprescue
-Architecture: any
+Architecture: amd64 i386
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Recover HFS+ partitions datas
