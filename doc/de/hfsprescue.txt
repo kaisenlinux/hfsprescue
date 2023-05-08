@@ -64,7 +64,7 @@
 
    hfsprescue unterstÃ¼tzt HFS+ compression (resource fork).
 
-   Aktuelle Version: 3.5, 26/Apr/2020
+   Aktuelle Version: 3.6, 07/Apr/2023
 
                                   2. Download
      __________________________________________________________________
@@ -75,41 +75,44 @@
 
      Spendenbetrag _____ [EUR]   Mit PayPal spenden oder mit [32]Bitcoin
 
-   [33]hfsprescue-3.5.tar.gz (2020/04/26) Source code
-   [34]hfsprescue-3.5-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac
-   OS X, FreeBSD
+   [33]hfsprescue-3.6.tar.gz (07/04/2023) Source code
+   [34]hfsprescue-3.6-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   FreeBSD
 
    Veraltete Versionen. Sollten nicht mehr verwendet werden.
-   [35]hfsprescue-3.4.tar.gz (2087/02/16) Source code
-   [36]hfsprescue-3.4-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   [35]hfsprescue-3.5.tar.gz (26/04/2020) Source Code
+   [36]hfsprescue-3.5-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
    FreeBSD
-   [37]hfsprescue-3.3.tar.gz (2017/03/31) Source code
-   [38]hfsprescue-3.3-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   [37]hfsprescue-3.4.tar.gz (16/02/2018) Source Code
+   [38]hfsprescue-3.4-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
    FreeBSD
-   [39]hfsprescue-3.2.tar.gz (2016/11/29) Source code
-   [40]hfsprescue-3.2-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   [39]hfsprescue-3.3.tar.gz (31/07/2017) Source Code
+   [40]hfsprescue-3.3-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
    FreeBSD
-   [41]hfsprescue-3.1.tar.gz (2016/09/14) Source code
-   [42]hfsprescue-3.1-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   [41]hfsprescue-3.2.tar.gz (29/11/2016) Source Code
+   [42]hfsprescue-3.2-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
    FreeBSD
-   [43]hfsprescue-3.0.tar.gz (2016/07/26) Source code
-   [44]hfsprescue-3.0-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   [43]hfsprescue-3.1.tar.gz (14/09/2016) Source Code
+   [44]hfsprescue-3.1-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
    FreeBSD
-   [45]hfsprescue-2.2.tar.gz (2015/12/19) Source code
-   [46]hfsprescue-2.2-precompiled.tar.gz (2015/12/19) Precompiled fÃ¼r
+   [45]hfsprescue-3.0.tar.gz (26/07/2016) Source Code
+   [46]hfsprescue-3.0-precompiled.tar.gz Precompiled fÃ¼r Linux, Mac OS X,
+   FreeBSD
+   [47]hfsprescue-2.2.tar.gz (19/12/2015) Source Code
+   [48]hfsprescue-2.2-precompiled.tar.gz (2015/12/19) Precompiled fÃ¼r
    Linux, Mac OS X, FreeBSD
-   [47]hfsprescue-2.1.tar.gz (2015/11/19) Source code
-   [48]hfsprescue-2.1-precompiled.zip (2015/11/19) Precompiled fÃ¼r Linux,
+   [49]hfsprescue-2.1.tar.gz (19/11/2015) Source Code
+   [50]hfsprescue-2.1-precompiled.zip (19/11/2015) Precompiled fÃ¼r Linux,
    Mac OS X, FreeBSD
-   [49]hfsprescue-2.0.tar.gz (2015/09/01) Source code
-   [50]hfsprescue-2.0-precompiled.zip (2015/09/01) Precompiled fÃ¼r Linux,
+   [51]hfsprescue-2.0.tar.gz (01/09/2015) Source Code
+   [52]hfsprescue-2.0-precompiled.zip (01/09/2015) Precompiled fÃ¼r Linux,
    Mac OS X, FreeBSD
-   [51]hfsprescue-1.1.tar.gz (2015/02/02)
-   [52]hfsprescue-1.0.tar.gz (2015/01/12)
-   [53]hfsprescue-0.3.tar.gz (2013/01/30)
-   [54]hfsprescue-0.2.tar.gz (2011/11/25)
-   [55]hfsprescue-0.1-patched.tar.gz (2011/10/05)
-   [56]hfsprescue-0.1.tar.gz (2010/11/30)
+   [53]hfsprescue-1.1.tar.gz (02/02/2015)
+   [54]hfsprescue-1.0.tar.gz (12/01/2015)
+   [55]hfsprescue-0.3.tar.gz (30/01/2013)
+   [56]hfsprescue-0.2.tar.gz (25/11/2011)
+   [57]hfsprescue-0.1-patched.tar.gz (05/10/2011)
+   [58]hfsprescue-0.1.tar.gz (30/11/2010)
 
                           3. Dateien wiederherstellen
      __________________________________________________________________
@@ -262,7 +265,7 @@
      -f, --force Log Dateien Ã¼berschreiben.
      -o <offset> Start Offset der Partition in Bytes angeben. NÃ¼tzlich
    wenn die Partitionstabelle beschÃ¤digt oder gelÃ¶scht wurde. Siehe
-   [57]hier fÃ¼r eine Beschreibung um den Offset zu berechnen.
+   [59]hier fÃ¼r eine Beschreibung um den Offset zu berechnen.
      -d <working / destination directory> Arbeits- bzw. Zielverzeichnis
    angeben.
 
@@ -294,24 +297,24 @@
    Wiederherstellungsprozess fortsetzen.
      -o <offset> Start Offset der Partition in Bytes angeben. NÃ¼tzlich
    wenn die Partitionstabelle beschÃ¤digt oder gelÃ¶scht wurde. Siehe
-   [58]hier fÃ¼r eine Beschreibung um den Offset zu berechnen.
+   [60]hier fÃ¼r eine Beschreibung um den Offset zu berechnen.
      -d <working directory> Arbeitsverzeichnis angeben.
-     --vh-file <file name> Volume Header Datei. Siehe auch [59]hier
+     --vh-file <file name> Volume Header Datei. Siehe auch [61]hier
      --eof-file <file name> Extents Overflow File Datei. Siehe auch
-   [60]hier
+   [62]hier
      --file-list <file name> Dateien mit einer Liste wiederherstellen.
-   Weitere Informationen siehe [61]hier
+   Weitere Informationen siehe [63]hier
      --file-list-csv <file name> Dateien mit einer Liste im CSV Format
-   wiederherstellen. Weitere Informationen siehe [62]hier
+   wiederherstellen. Weitere Informationen siehe [64]hier
      --alternative Alternativen Dateinamen generieren wenn die Datei
    bereits im Verzeichnis existiert. Dies kann bei Ã¤lteren Versionen der
-   Datei oder gelÃ¶schten Versionen der Datei passieren. Siehe [63]hier
+   Datei oder gelÃ¶schten Versionen der Datei passieren. Siehe [65]hier
    fÃ¼r Details.
      --ignore-blocks Dateien die mehr Blocks reserviert haben als nÃ¶tig,
-   sollen nicht Ã¼bersprungen werden. dies betrifft Dateien die grÃ¶Ãer
+   sollen nicht Ã¼bersprungen werden. Dies betrifft Dateien die grÃ¶Ãer
    als 1 GB sind. Betroffene Dateien werden in der Logdatei von Schritt 3
    mit '_too_many_blocks_skipped_' gekennzeichnet.
-     --ignore-file-error Nich stoppen wenn beim erstellen der Datei ein
+     --ignore-file-error Nicht stoppen wenn beim Erstellen der Datei ein
    Fehler auftritt. Betroffene Dateien werden in der Logdatei von Schritt
    3 mit '_file_create_error_' gekennzeichnet.
 
@@ -340,7 +343,7 @@
 
   Unicode String und/oder Bytes einer Datei suchen '--find'
 
-   Datensuche auf Sektorenebene. Siehe [64]hier fÃ¼r mehr Details.
+   Datensuche auf Sektorenebene. Siehe [66]hier fÃ¼r mehr Details.
 
      --find <device node|image file> Finde Daten. Es muÃ der Device Node
    oder die Image Datei angegeben werden.
@@ -352,7 +355,7 @@
 
   Liste Dateien '--list'
 
-   Auflisten der gefundenen Dateien. Siehe [65]hier fÃ¼r mehr Details.
+   Auflisten der gefundenen Dateien. Siehe [67]hier fÃ¼r mehr Details.
 
      --list Dieser Parameter listet alle gefundenen Dateien auf. Der
    Parameter kann erst nach dem Schritt 2 durchgefÃ¼hrt wurde verwendet
@@ -365,7 +368,7 @@
 
   CSV Export '--csv'
 
-   Gefundene Dateien als CSV Datei exportieren. Siehe [66]hier fÃ¼r
+   Gefundene Dateien als CSV Datei exportieren. Siehe [68]hier fÃ¼r
    Details.
 
      --csv Exportiere die Liste der gefundenen Dateien als CSV Datei. Der
@@ -380,7 +383,7 @@
   Einzelne Datei wiederherstellen '--one-file'
 
    Nur eine bestimmte Datei der gefundenen wiederherstellen. Der Parameter
-   kann erst nach dem Schritt 2 durchgefÃ¼hrt wurde. Siehe [67]hier fÃ¼r
+   kann erst nach dem Schritt 2 durchgefÃ¼hrt wurde. Siehe [69]hier fÃ¼r
    Details.
 
      --one-file
@@ -391,31 +394,31 @@
    Volume Header unbrauchbar ist.
      -o <offset> Start Offset der Partition in Bytes angeben. NÃ¼tzlich
    wenn die Partitionstabelle beschÃ¤digt oder gelÃ¶scht wurde. Siehe
-   [68]hier fÃ¼r eine Beschreibung um den Offset zu berechnen.
+   [70]hier fÃ¼r eine Beschreibung um den Offset zu berechnen.
      -d <working directory> Arbeitsverzeichnis angeben.
-     --vh-file <file name> Volume Header Datei. Siehe auch [69]hier
+     --vh-file <file name> Volume Header Datei. Siehe auch [71]hier
      --eof-file <file name> Extents Overflow File Datei. Siehe auch
-   [70]hier
+   [72]hier
      --alternative WÃ¤hle alternativen Dateinamen, wenn die
    wiederherzustellende Datei bereits im Verzeichnis existiert. Dies kann
    bei Ã¤lteren Versionen oder gelÃ¶schten Versionen der Datei passieren.
-   Siehe [71]hier fÃ¼r Details.
+   Siehe [73]hier fÃ¼r Details.
 
   Das Extents Overflow File suchen '--find-eof'
 
-   Scanne nach mÃ¶glichen Start Blocks. Siehe [72]hier fÃ¼r Details.
+   Scanne nach mÃ¶glichen Start Blocks. Siehe [74]hier fÃ¼r Details.
 
      --find-eof <device node|image file> Es muÃ der Device Node oder die
    Image Datei angegeben werden.
      -b <block size> BlockgrÃ¶Ãe in Bytes setzen. NÃ¼tzlich wenn der
    Volume Header unbrauchbar ist.
      -o <offset> Startoffset der Partition in Bytes. NÃ¼tzlich wenn die
-   Partitionstabelle gelÃ¶scht oder beschÃ¤digt ist. Siehe [73]hier fÃ¼r
+   Partitionstabelle gelÃ¶scht oder beschÃ¤digt ist. Siehe [75]hier fÃ¼r
    eine Beschreibung wie man den Offset berechnet.
 
   Das Extents Overflow File speichern '--extract-eof'
 
-   Siehe [74]hier fÃ¼r Details.
+   Siehe [76]hier fÃ¼r Details.
 
      --extract-eof <device node|image file> Es muÃ der Device Node oder
    die Image Datei angegeben werden.
@@ -431,7 +434,7 @@
   Den HFS+ Volume Header suchen '--find-vh'
 
    Scanne nach mÃ¶glichen Positionen des Volume Headers der Partition.
-   Siehe [75]hier fÃ¼r Details.
+   Siehe [77]hier fÃ¼r Details.
 
      --find-vh <device node|image file> Es muÃ der Device Node oder die
    Image Datei angegeben werden.
@@ -445,7 +448,7 @@
   Den HFS+ Alternate Volume Header suchen '--find-avh'
 
    Scanne nach mÃ¶glichen Positionen des Alternate Volume Headers. Siehe
-   [76]hier fÃ¼r Details.
+   [78]hier fÃ¼r Details.
 
      --find-avh <device node|image file> Es muÃ der Device Node oder die
    Image Datei angegeben werden.
@@ -457,7 +460,7 @@
 
   Den Volume Header speichern '--extract-vh'
 
-   Siehe [77]hier fÃ¼r Details.
+   Siehe [79]hier fÃ¼r Details.
 
      --extract-vh <device node|image file> Es muÃ der Device Node oder die
    Image Datei angegeben werden.
@@ -466,7 +469,7 @@
 
   Leere Verzeichnisse entfernen '--remove-empty-dirs'
 
-   Siehe [78]hier fÃ¼r mehr Informationen.
+   Siehe [80]hier fÃ¼r mehr Informationen.
 
      --remove-empty-dirs Ohne weitere Parameter wird das './restored'
    Verzeichnis verwendet.
@@ -659,7 +662,7 @@ ck 560458
   Einfache Liste: --file-list
 
    Das Format der Datei ist sehr einfach. In jeder Zeile steht die
-   Dateinummer (aus [79]--list), abschlieÃend mit einem Doppelpunkt.
+   Dateinummer (aus [81]--list), abschlieÃend mit einem Doppelpunkt.
    Hinter dem Doppelpunkt kann ein beliebiger Text stehen. Der Text hinter
    dem Doppelpunkt wird ignoriert.
 
@@ -745,13 +748,13 @@ block 524322
 
   CSV: --file-list-csv <file name>
 
-   Um komplexere Filter anzuwenden, verwenden Sie ein
+   Um komplexere Filter anzuwenden verwenden Sie ein
    Tabellenkalkulationsprogramm wie z.B. Excel oder das LibreOffice
    Spreadsheet.
 
-   Exportieren Sie die Dateinamenliste mit '[80]--csv'. Importieren Sie
+   Exportieren Sie die Dateinamenliste mit '[82]--csv'. Importieren Sie
    die CSV Datei in Ihrem Tabellenprogramm und fÃ¼hren Sie die
-   gewÃ¼nschten Ãnderungen durch. Dann exportieren/spechern Sie die Daten
+   gewÃ¼nschten Ãnderungen durch. Dann exportieren/speichern Sie die Daten
    in eine neue CSV Datei. Das Trennzeichen muss ein Semicolon ';' sein.
    Die Titelzeile (erste Zeile) wird von hfsprescue ignoriert.
 
@@ -849,7 +852,7 @@ CatalogFile StartBlock:         10270
      Beispiel: hfsprescue -s3 /dev/sdb -o 209735680
 
    Falls es nÃ¶tig ist, kÃ¶nnen Sie den Volume Header in einer Datei
-   speichern. Siehe [81]hier.
+   speichern. Siehe [83]hier.
 
      Beispiel: hfsprescue --extract-vh /dev/sdb 409642
 
@@ -905,7 +908,7 @@ Possible partition start: 209735680 (Byte), 0xc805000, 409640 (LBA Sector), at 2
      Beispiel: hfsprescue -s3 /dev/sdb -o 209735680
 
    Falls es nÃ¶tig ist, kÃ¶nnen Sie den Volume Header in einer Datei
-   speichern. Siehe [82]hier.
+   speichern. Siehe [84]hier.
 
      Beispiel: hfsprescue --extract-vh /dev/sdb 1953931302
 
@@ -921,7 +924,7 @@ Possible partition start: 209735680 (Byte), 0xc805000, 409640 (LBA Sector), at 2
    ZusÃ¤tzlich zum Device Node / Imagenamen benÃ¶tigen Sie auch die LBA
    Sektornummer des Volume Headers. Wenn Sie die LBA Sektornummer nicht
    wissen, dann kÃ¶nnen Sie nach dem Volume Header suchen. Siehe dazu
-   [83]Den HFS+ Volume Header oder Alternate Volume Header und den Start
+   [85]Den HFS+ Volume Header oder Alternate Volume Header und den Start
    der Partition finden.
 
    Die Volume Header Datei kann mit verschiedenen Programmmodi verwendet
@@ -937,7 +940,7 @@ Possible partition start: 209735680 (Byte), 0xc805000, 409640 (LBA Sector), at 2
 
    Das Extents Overflow File wird verwendet um die Positionen von
    Dateifragmenten zu speichern, wenn die Datei in mehr als 8 Fragmente
-   aufgeteilt ist. Wenn der Volume Header kaputt ist oder eine falsche
+   aufgeteilt ist. Wenn der Volume Header defekt ist oder eine falsche
    Position des Extents Overflow Files abgespeichert hat, dann ist es
    nicht mÃ¶glich, stark fragmentierte Dateien wiederherzustellen. Mit dem
    Parameter --find-eof kann man eine Suche starten um mÃ¶gliche
@@ -957,7 +960,7 @@ Possible partition start: 209735680 (Byte), 0xc805000, 409640 (LBA Sector), at 2
    '--vh-file' angeben.
 
    Wenn Positionen gefunden wurden, dann kann man das Extents Overflow
-   File in einer Datei speichern. Siehe [84]Das Extents Overflow File
+   File in einer Datei speichern. Siehe [86]Das Extents Overflow File
    sichern.
 
    Beispiel:
@@ -987,7 +990,7 @@ atalogFile
      '--one-file' wiederherstellen kann, muss das Extents Overflow File
      in einer Datei gespeichert werden.
 
-   Info: Falls hfsprescue stark fragmentierte Dateien haben, dann
+   Info: Falls Sie stark fragmentierte Dateien haben, dann
 
      • wird beim wiederherstellen (Schritt 3) eine entsprechende Meldung
      im Log ausgegeben. Suchen Sie im Log nach dem Text
@@ -1153,7 +1156,7 @@ File created.
    • Finde Bytes einer oder mehreren Dateien -ff
 
    Das Auffinden der Bytes einer Datei (Inhalt) kann unter anderem
-   verwendet werden wenn man den [85]Startoffset einer Partition ermitteln
+   verwendet werden wenn man den [87]Startoffset einer Partition ermitteln
    muÃ. Es macht wenig Sinn nach der kompletten Datei zu suchen, weil die
    Datei fragmentiert sein kann und deshalb nichts gefunden wird. Die
    DateigrÃ¶Ãe ist nicht limitiert, allerdings wird maximal nach einem 1MB
@@ -1323,7 +1326,7 @@ String "myimportantfile.doc" found at offset 1048576 + 494446 = 1543022 (0x10000
      - Das Extents Overflow File ist beschÃ¤digt.
 
    In den meisten FÃ¤llen wird ein falscher Start der Partition verwendet.
-   Siehe [86]Wie kann ich den Startoffset der Partition ermitteln?
+   Siehe [88]Wie kann ich den Startoffset der Partition ermitteln?
 
 20. Die Partitionstabelle ist defekt, gelÃ¶scht, unbrauchbar! Wie kann ich den
                       Startoffset der Partition ermitteln?
@@ -1360,10 +1363,10 @@ String "myimportantfile.doc" found at offset 1048576 + 494446 = 1543022 (0x10000
    ermitteln.
 
      1. Wenn der HFS+ Volume Header in Ordnung ist, dann siehe
-     [87]Auffinden des HFS+ Volume Header und den Startoffset der
+     [89]Auffinden des HFS+ Volume Header und den Startoffset der
      Partition ermitteln.
 
-     2. Wenn Sie eine Referenzdatei haben, dann siehe [88]Wie finde ich
+     2. Wenn Sie eine Referenzdatei haben, dann siehe [90]Wie finde ich
      den richtigen Startoffset der Partition mit einer Referenzdatei.
 
       21. Wie finde ich den richtigen Startoffset der Partition mit einer
@@ -1513,7 +1516,7 @@ File bytes found at offset 746586112 + 28672 = 746614784 (0x2c800000 + 0x7000 =
 
    Es kann auch zu Zugriffsproblemen kommen wenn das Dateisystem gemountet
    ist. In diesem Fall muÃ man es "unmounten" bevor man hfsprescue
-   verwendet. Mac OS X Benutzer finden [89]hier weitere Details.
+   verwendet. Mac OS X Benutzer finden [91]hier weitere Details.
 
                     25. sudo: hfsprescue: command not found
      __________________________________________________________________
@@ -1604,97 +1607,99 @@ s)
    kontaktieren.
      __________________________________________________________________
 
-                         © 2020 by Elmar Hanlhofer
-             Die Seite wurde zuletzt am 26/Apr/2020 geÃ¤ndert.
+                         © 2023 by Elmar Hanlhofer
+             Die Seite wurde zuletzt am 07/Apr/2023 geÃ¤ndert.
 
 References
 
    1. https://www.plop.at/de/hfsprescue/full.html
-   2. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/intro.html
-   3. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/download.html
-   4. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/recover_files.html
-   5. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/additional_features.html
-   6. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/parameters.html
-   7. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/list.html
-   8. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/csv.html
-   9. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/restore_one_file.html
-  10. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/restore_with_list.html
-  11. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/find_vh.html
-  12. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/extract_vh.html
-  13. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/find_eof.html
-  14. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/extract_eof.html
-  15. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/remove_empty_dirs.html
-  16. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/find_bytes.html
-  17. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/files.html
-  18. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/restored_directory.html
-  19. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/faq.html
-  20. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/invalid_files.html
-  21. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/partition_table_damaged.html
-  22. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/partition_offset.html
-  23. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/unusual_block_size.html
-  24. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/eof_problems.html
-  25. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/permission_denied.html
-  26. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/sudo.html
-  27. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/kernel_too_old.html
-  28. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/unicode_utf8.html
-  29. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/asian.html
-  30. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/osx.html
-  31. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/personal_notes.html
+   2. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/intro.html
+   3. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/download.html
+   4. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/recover_files.html
+   5. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/additional_features.html
+   6. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/parameters.html
+   7. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/list.html
+   8. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/csv.html
+   9. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/restore_one_file.html
+  10. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/restore_with_list.html
+  11. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/find_vh.html
+  12. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/extract_vh.html
+  13. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/find_eof.html
+  14. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/extract_eof.html
+  15. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/remove_empty_dirs.html
+  16. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/find_bytes.html
+  17. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/files.html
+  18. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/restored_directory.html
+  19. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/faq.html
+  20. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/invalid_files.html
+  21. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/partition_table_damaged.html
+  22. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/partition_offset.html
+  23. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/unusual_block_size.html
+  24. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/eof_problems.html
+  25. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/permission_denied.html
+  26. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/sudo.html
+  27. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/kernel_too_old.html
+  28. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/unicode_utf8.html
+  29. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/asian.html
+  30. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/osx.html
+  31. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/personal_notes.html
   32. file:///de/donate.html
-  33. https://download.plop.at/hfsprescue/hfsprescue-3.5.tar.gz
-  34. https://download.plop.at/hfsprescue/hfsprescue-3.5-precompiled.tar.gz
-  35. https://download.plop.at/hfsprescue/hfsprescue-3.4.tar.gz
-  36. https://download.plop.at/hfsprescue/hfsprescue-3.4-precompiled.tar.gz
-  37. https://download.plop.at/hfsprescue/hfsprescue-3.3.tar.gz
-  38. https://download.plop.at/hfsprescue/hfsprescue-3.3-precompiled.tar.gz
-  39. https://download.plop.at/hfsprescue/hfsprescue-3.2.tar.gz
-  40. https://download.plop.at/hfsprescue/hfsprescue-3.2-precompiled.tar.gz
-  41. https://download.plop.at/hfsprescue/hfsprescue-3.1.tar.gz
-  42. https://download.plop.at/hfsprescue/hfsprescue-3.1-precompiled.tar.gz
-  43. https://download.plop.at/hfsprescue/hfsprescue-3.0.tar.gz
-  44. https://download.plop.at/hfsprescue/hfsprescue-3.0-precompiled.tar.gz
-  45. https://download.plop.at/hfsprescue/hfsprescue-2.2.tar.gz
-  46. https://download.plop.at/hfsprescue/hfsprescue-2.2-precompiled.tar.gz
-  47. https://download.plop.at/hfsprescue/hfsprescue-2.1.tar.gz
-  48. https://download.plop.at/hfsprescue/hfsprescue-2.1-precompiled.zip
-  49. https://download.plop.at/hfsprescue/hfsprescue-2.0.tar.gz
-  50. https://download.plop.at/hfsprescue/hfsprescue-2.0-precompiled.zip
-  51. https://download.plop.at/hfsprescue/hfsprescue-1.1.tar.gz
-  52. https://download.plop.at/hfsprescue/hfsprescue-1.0.tar.gz
-  53. https://download.plop.at/hfsprescue/hfsprescue-0.3.tar.gz
-  54. https://download.plop.at/hfsprescue/hfsprescue-0.2.tar.gz
-  55. https://download.plop.at/hfsprescue/hfsprescue-0.1-patched.tar.gz
-  56. https://download.plop.at/hfsprescue/hfsprescue-0.1.tar.gz
-  57. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_table_damaged.html
-  58. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_table_damaged.html
-  59. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_vh.html
-  60. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_eof.html
-  61. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#restore_with_list.html
-  62. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#restore_with_list.html
-  63. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#hfsp_alternative
-  64. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#find_bytes.html
-  65. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#list.html
-  66. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#csv.html
-  67. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#restore_one_file.html
-  68. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_table_damaged.html
-  69. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_vh.html
-  70. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_eof.html
-  71. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#hfsp_alternative
-  72. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#find_eof.html
-  73. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_table_damaged.html
-  74. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_eof.html
-  75. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#find_vh.html
-  76. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#find_vh.html
-  77. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_vh.html
-  78. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#remove_empty_dirs.html
-  79. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#list.html
-  80. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#csv.html
-  81. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_vh.html
-  82. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_vh.html
-  83. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#find_vh.html
-  84. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#extract_eof.html
-  85. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_table_damaged.html
-  86. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_table_damaged.html
-  87. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#find_vh.html
-  88. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#partition_offset.html
-  89. file:///home/bitbyte/Downloads/hfsprescue-3.5/doc/de/hfsprescue.html#osx.html
+  33. https://download.plop.at/hfsprescue/hfsprescue-3.6.tar.gz
+  34. https://download.plop.at/hfsprescue/hfsprescue-3.6-precompiled.tar.gz
+  35. https://download.plop.at/hfsprescue/hfsprescue-3.5.tar.gz
+  36. https://download.plop.at/hfsprescue/hfsprescue-3.5-precompiled.tar.gz
+  37. https://download.plop.at/hfsprescue/hfsprescue-3.4.tar.gz
+  38. https://download.plop.at/hfsprescue/hfsprescue-3.4-precompiled.tar.gz
+  39. https://download.plop.at/hfsprescue/hfsprescue-3.3.tar.gz
+  40. https://download.plop.at/hfsprescue/hfsprescue-3.3-precompiled.tar.gz
+  41. https://download.plop.at/hfsprescue/hfsprescue-3.2.tar.gz
+  42. https://download.plop.at/hfsprescue/hfsprescue-3.2-precompiled.tar.gz
+  43. https://download.plop.at/hfsprescue/hfsprescue-3.1.tar.gz
+  44. https://download.plop.at/hfsprescue/hfsprescue-3.1-precompiled.tar.gz
+  45. https://download.plop.at/hfsprescue/hfsprescue-3.0.tar.gz
+  46. https://download.plop.at/hfsprescue/hfsprescue-3.0-precompiled.tar.gz
+  47. https://download.plop.at/hfsprescue/hfsprescue-2.2.tar.gz
+  48. https://download.plop.at/hfsprescue/hfsprescue-2.2-precompiled.tar.gz
+  49. https://download.plop.at/hfsprescue/hfsprescue-2.1.tar.gz
+  50. https://download.plop.at/hfsprescue/hfsprescue-2.1-precompiled.zip
+  51. https://download.plop.at/hfsprescue/hfsprescue-2.0.tar.gz
+  52. https://download.plop.at/hfsprescue/hfsprescue-2.0-precompiled.zip
+  53. https://download.plop.at/hfsprescue/hfsprescue-1.1.tar.gz
+  54. https://download.plop.at/hfsprescue/hfsprescue-1.0.tar.gz
+  55. https://download.plop.at/hfsprescue/hfsprescue-0.3.tar.gz
+  56. https://download.plop.at/hfsprescue/hfsprescue-0.2.tar.gz
+  57. https://download.plop.at/hfsprescue/hfsprescue-0.1-patched.tar.gz
+  58. https://download.plop.at/hfsprescue/hfsprescue-0.1.tar.gz
+  59. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_table_damaged.html
+  60. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_table_damaged.html
+  61. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_vh.html
+  62. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_eof.html
+  63. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#restore_with_list.html
+  64. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#restore_with_list.html
+  65. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#hfsp_alternative
+  66. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#find_bytes.html
+  67. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#list.html
+  68. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#csv.html
+  69. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#restore_one_file.html
+  70. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_table_damaged.html
+  71. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_vh.html
+  72. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_eof.html
+  73. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#hfsp_alternative
+  74. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#find_eof.html
+  75. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_table_damaged.html
+  76. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_eof.html
+  77. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#find_vh.html
+  78. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#find_vh.html
+  79. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_vh.html
+  80. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#remove_empty_dirs.html
+  81. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#list.html
+  82. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#csv.html
+  83. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_vh.html
+  84. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_vh.html
+  85. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#find_vh.html
+  86. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#extract_eof.html
+  87. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_table_damaged.html
+  88. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_table_damaged.html
+  89. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#find_vh.html
+  90. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#partition_offset.html
+  91. file:///home/plop/download/hfsprescue/hfsprescue-3.6/doc/de/hfsprescue.html#osx.html

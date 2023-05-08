@@ -2638,7 +2638,7 @@ int main (int argc, char *argv[])
 	ignore_file_create_error = true;
     }
 
-    if (HandleArgument (argv, argc, "--ignore-file-error"))
+    if (HandleArgument (argv, argc, "--ignore-blocks"))
     {
 	ignore_blocks = true;
     }

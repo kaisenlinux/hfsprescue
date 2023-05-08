@@ -1,3 +1,8 @@
+2023/04/07 3.6 by Elmar Hanlhofer
+
+    * Fixed: Parameter --ignore-blocks was not checked.
+
+    
 2020/04/26 3.5 by Elmar Hanlhofer, Alan D. Salewski
 
     Elmar Hanlhofer:

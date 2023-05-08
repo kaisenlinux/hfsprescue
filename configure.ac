@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT(hfsprescue, [3.5 2020/09/25], [Elmar Hanlhofer https://www.plop.at/en/hfsprescue.html])
+AC_INIT(hfsprescue, [3.6 07/04/2023], [Elmar Hanlhofer https://www.plop.at/en/hfsprescue.html])
 AM_INIT_AUTOMAKE([no-define])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
